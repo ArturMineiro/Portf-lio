@@ -1,0 +1,238 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    
+}
+#sobre{
+    margin-bottom: 150px;
+    }
+    
+    #formacao{
+        margin-bottom: 150px;
+    }
+    
+    #projetos{
+        margin-bottom: 150px;
+    }
+    
+/* Deixar lado a lado*/
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.side-left, .side-right {
+    width: 45%; /* Ajusta o tamanho para 45% de cada lado */
+}
+/* Estilo do header */
+header {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Estilo da seção de "Sobre" */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+/* Estilo das seções */
+.section-content {
+    padding: 40px;
+    text-align: center;
+ 
+}
+
+h1, h2 {
+    color: #444;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+/* Estilo do carrossel */
+.carousel {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carousel-item {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.carousel-item.active {
+    display: flex;
+}
+
+.carousel img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+/* Estilos para os botões do carrossel */
+.prev-btn, .next-btn {
+    margin: 10px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: #555;
+}
+button {
+    position: absolute;
+    top: 50%;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* Estilos da timeline */
+.timeline {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timeline-icon {
+    width: 20px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 50%;
+    position: absolute;
+    left: -10px;
+}
+
+.timeline-content {
+    margin-left: 40px; /* Distância entre o ícone e o conteúdo */
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 3px solid #333;
+}
+
+.timeline h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.timeline h4 {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.timeline p {
+    margin: 10px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Responsivo - Timeline linear no mobile */
+@media (max-width: 768px) {
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .timeline-icon {
+        left: -10px;
+        top: 0;
+    }
+
+    .timeline-content {
+        margin-left: 0;
+        padding-left: 30px;
+        border-left: none;
+        border-top: 3px solid #333;
+    }
+}
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    margin: 0 10px; 
+    color: #333;
+    font-size: 24px; 
+    transition: color 0.3s; 
+}
+
+.social-links a:hover {
+    color: #0077b5;
+}
+
+.social-links a:nth-child(2):hover {
+    color: #333; 
+}
+
+.social-links a:nth-child(3):hover {
+    color: #e1306c; 
+}
