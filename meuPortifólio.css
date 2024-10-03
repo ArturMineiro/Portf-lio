@@ -65,7 +65,7 @@ nav ul li a {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    margin-right: 20px;
+    margin-right: 160px;
 }
 
 .about-text {
@@ -86,7 +86,10 @@ h1, h2 {
 
 p {
     font-size: 18px;
-    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.6; /* Melhora a legibilidade */
+    margin-bottom: 20px; /* Garante espaçamento adequado com outros elementos */
+    margin-left: 10px;
 }
 /* Estilo do carrossel */
 .carousel {
@@ -212,6 +215,34 @@ button {
         padding-left: 30px;
         border-left: none;
         border-top: 3px solid #333;
+    }
+    .main-content {
+        flex-direction: column; /* Colocar um abaixo do outro */
+    }
+    .side-left, .side-right {
+        width: 100%; /* Ocupar 100% da largura */
+    }
+
+    /* Ajustar a imagem do perfil na seção 'Sobre' */
+    .about-container {
+        flex-direction: column; /* Colocar a imagem acima do texto */
+        text-align: center; /* Centralizar o conteúdo */
+    }
+    .profile-pic {
+        margin: 0 0 20px 0; /* Remover margem lateral e adicionar margem inferior */
+    }
+
+    /* Carrossel */
+    .carousel img {
+        width: 100%; /* Ajustar a largura das imagens no carrossel */
+    }
+
+    /* Navegação */
+    nav ul {
+        flex-direction: column; /* Colocar links de navegação um abaixo do outro */
+    }
+    nav ul li {
+        margin: 10px 0; /* Espaçamento entre os itens do menu */
     }
 }
 .social-links {
