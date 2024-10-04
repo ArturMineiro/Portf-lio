@@ -11,7 +11,26 @@ body {
     color: #333;
     
 }
+
+#contato{
+    background-color: #333;;
+    color:white;
+}
+.contact {
+    color: #fff !important; /* Cor do ícone clara, forçada */
+    font-size: 24px; /* Tamanho do ícone */
+    margin: 0 10px; /* Margem entre os ícones */
+    transition: color 0.3s ease; /* Efeito suave na mudança de cor ao passar o mouse */
+}
+
+.contact:hover {
+    color: #ccc !important; /* Cor mais clara ao passar o mouse, forçada */
+}
+
 #sobre{
+    
+    color:white;
+    background-color: #7a4df5;
     margin-bottom: 150px;
     }
     
@@ -123,24 +142,27 @@ p {
 .prev-btn, .next-btn {
     margin: 10px;
     padding: 10px;
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.7); /* Fundo semitransparente */
     color: #fff;
     border: none;
     cursor: pointer;
+    border-radius: 5px; /* Adiciona bordas arredondadas para um visual mais suave */
 }
 
 .prev-btn:hover, .next-btn:hover {
-    background-color: #555;
+    background-color: rgba(85, 85, 85, 0.7); /* Fundo semitransparente ao passar o mouse */
 }
+
 button {
     position: absolute;
     top: 50%;
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.7); /* Fundo semitransparente */
     color: white;
     border: none;
     padding: 10px;
     cursor: pointer;
     transform: translateY(-50%);
+    border-radius: 5px; /* Adiciona bordas arredondadas para um visual mais suave */
 }
 
 .prev-btn {
@@ -149,6 +171,14 @@ button {
 
 .next-btn {
     right: 10px;
+}
+
+/* Adicionando um estilo responsivo para dispositivos móveis */
+@media (max-width: 768px) {
+    .prev-btn, .next-btn {
+        padding: 8px; /* Ajuste de preenchimento para botões em dispositivos móveis */
+        font-size: 14px; /* Ajuste de tamanho da fonte */
+    }
 }
 
 /* Estilos da timeline */
@@ -267,6 +297,7 @@ button {
 .social-links a:nth-child(3):hover {
     color: #e1306c; 
 }
+
 .btn {
     background-color: #007bff;
     color: white;
@@ -278,10 +309,17 @@ button {
 .btn:hover {
     background-color: #0056b3;
 }
-.descricao{ width: 50%;}
-.icon-imagem{ 
-    width: 200px;
-    height: 200px;
-    border-radius: 30%;
+.descricao-container {
+    display: flex;
+    flex-direction: column; /* Mantém o texto e o botão em coluna */
+}
 
+
+.carousel-item{
+    background-color:rgb(227,234,231);
+      border-radius: 30px;
+      max-width: 800px;
+      padding: 20px;
+   
+      align-items: center;
 }

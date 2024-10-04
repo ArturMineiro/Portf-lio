@@ -26,7 +26,7 @@
         <div class="about-container">
             <img src="imagens/artur.jpeg" alt="Foto de Artur Mineiro" class="profile-pic">
             <div class="about-text">
-                <h1>Olá, meu nome é Artur!</h1>
+                <h1 class="contact">Olá, meu nome é Artur!</h1>
                 <p>Prazer me chamo Artur, 
                     entusiasta do mundo da programação dedicado a impulsionar minha carreira como 
                     Desenvolvedor de Software. Atualmente, atuo como desenvolvedor web utilizando as 
@@ -105,10 +105,17 @@
     <section id="projetos" class="section-content">
         <h2>Veja alguns de meus projetos:</h2>
         <div class="carousel">
-            <div class="carousel-item active">
-                <img src="projeto1.jpg" alt="Projeto 1">
-                <p>Projeto 1: Descrição do projeto</p>
+            <div class="carousel-item">
+                <img src="imagens/projeto_portifolio.png" alt="Projeto Portfólio" class="icon-imagem">
+                <div class="descricao-container">
+                    <p class="descricao">Primeiro Teste em React: Este é meu primeiro projeto utilizando React
+                         com um backend json-server. Ele gerencia meus projetos e 
+                         trabalha com eles utilizando um backend dbjson que pode ser executado
+                          localmente com npm run backend.</p>
+                    <a href="https://projeto-react-firts-htdg.vercel.app/" target="_blank" class="btn">Ver Projeto</a>
+                </div>
             </div>
+            
             <div class="carousel-item">
                 <img src="projeto2.jpg" alt="Projeto 2">
                 <p>Projeto 2: Descrição do projeto</p>
@@ -117,32 +124,26 @@
                 <img src="projeto3.jpg" alt="Projeto 3">
                 <p>Projeto 3: Descrição do projeto</p>
             </div>
-    
-            <!-- Adicionando seu projeto -->
-            <div class="carousel-item">
-            <img src="imagens/projeto_portifolio.png" alt="Projeto Portfólio" class="icon-imagem">
-            <p class="descricao">Primeiro Teste em React: Este é meu primeiro projeto utilizando React com um backend json-server. Ele gerencia meus projetos e trabalha com eles utilizando um backend dbjson que pode ser executado localmente com npm run backend.</p>
-            <a href="https://projeto-react-firts-htdg.vercel.app/" target="_blank" class="btn btn-primary">Ver Projeto</a>
-        </div>
             
             <!-- Botões de navegação do carrossel -->
             <button class="prev-btn">Anterior</button>
             <button class="next-btn">Próximo</button>
         </div>
+        
     </section>
     
 
     <section id="contato" class="section-content">
-        <h2>Contato</h2>
+        <h2 class="contact">Contato</h2>
         <p>Entre em contato comigo através do e-mail: <a href="mailto:arturmineiro2@hotmail.com">arturmineiro2@hotmail.com</a></p>
         <div class="social-links">
-            <a href="https://linkedin.com/in/artur-mineiro-2871b021a" target="_blank" aria-label="LinkedIn">
+            <a href="https://linkedin.com/in/artur-mineiro-2871b021a" target="_blank" aria-label="LinkedIn" class="contact">
                 <i class="fab fa-linkedin"></i>
             </a>
-            <a href="https://github.com/ArturMineiro" target="_blank" aria-label="GitHub">
+            <a href="https://github.com/ArturMineiro" target="_blank" aria-label="GitHub" class="contact">
                 <i class="fab fa-github"></i>
             </a>
-            <a href="https://www.instagram.com/artur_mineiro?utm_source=qr&igsh=MTlsMjd2M3NieW5pYw==" target="_blank" aria-label="Instagram">
+            <a href="https://www.instagram.com/artur_mineiro?utm_source=qr&igsh=MTlsMjd2M3NieW5pYw==" target="_blank" aria-label="Instagram" class="contact"> 
                 <i class="fab fa-instagram"></i>
             </a>
         </div>
