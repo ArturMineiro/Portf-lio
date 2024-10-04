@@ -21,6 +21,7 @@ body {
     font-size: 24px; /* Tamanho do ícone */
     margin: 0 10px; /* Margem entre os ícones */
     transition: color 0.3s ease; /* Efeito suave na mudança de cor ao passar o mouse */
+    margin-bottom: 20px;
 }
 
 .contact:hover {
