@@ -325,3 +325,7 @@ button {
    
       align-items: center;
 }
+.icon-imagem{
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
