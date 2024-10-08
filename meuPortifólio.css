@@ -323,11 +323,67 @@ button {
 }
 .descricao-container {
     display: flex;
-    flex-direction: column; /* Mantém o texto e o botão em coluna */
+    flex-direction: column; 
+}
+/* icons e framey */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas no desktop */
+    gap: 20px;
+    margin-top: 20px;
+    justify-items: center;
+    height: auto; /* Ajuste automático da altura */
 }
 
+/* Ajuste para que os itens ocupem um tamanho fixo e uniforme */
+.grid-item {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    width: 100%; /* Ocupa todo o espaço da coluna */
+    min-height: 250px; /* Altura mínima maior para deixar os itens mais uniformes */
+}
 
-.icon-imagem{
-    border-radius: 5px;
+/* Efeito de hover */
+.grid-item:hover {
+    transform: translateY(-10px);
+}
+
+/* Ajuste das imagens */
+.grid-item img {
+    width: 80px; /* Imagens maiores */
+    height: 80px;
     margin-bottom: 10px;
+}
+
+/* Ajuste do texto */
+.grid-item p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Ajuste para telas médias (tablets) */
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas médias */
+    }
+}
+
+/* Ajuste para telas pequenas (celulares) */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas pequenas */
+    }
+}
+
+/* Ajuste para telas muito pequenas */
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
+    }
 }
