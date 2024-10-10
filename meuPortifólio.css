@@ -17,7 +17,7 @@ body {
     color:white;
 }
 .contact {
-    color: #fff !important; /* Cor do ícone clara, forçada */
+    color: #fff !important; 
     font-size: 24px; /* Tamanho do ícone */
     margin: 0 10px; /* Margem entre os ícones */
     transition: color 0.3s ease; /* Efeito suave na mudança de cor ao passar o mouse */
@@ -390,4 +390,25 @@ button {
 /* #meusFrameworks{
     max-width: 900px;
     
-} */
+} 
+    *//* Estilo geral para os parágrafos */
+.grid-item p {
+    text-align: center;           
+    font-size: 16px;             
+    margin: 10px 0;              
+    color: #333;                  
+    font-family: 'Arial', sans-serif;  
+}
+
+/* Estilo específico para o segundo parágrafo de cada item */
+.grid-item p:nth-child(3) {
+    font-weight: bold;           
+    color: #007bff;           
+
+}
+.grid-item {
+    padding: 20px;
+    background-color: #f9f9f9;   
+    border-radius: 8px;          
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Sombra sutil */
+}
