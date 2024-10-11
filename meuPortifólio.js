@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollTopBtn = document.getElementById('scrollTopBtn');
 
     window.onscroll = function() {
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        if (document.documentElement.scrollTop > 300) {
             scrollTopBtn.style.display = "block";
         } else {
             scrollTopBtn.style.display = "none";
