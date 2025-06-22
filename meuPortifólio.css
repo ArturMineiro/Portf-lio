@@ -7,54 +7,116 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-
+    background-color: #F8F9FB;
+    color: #2C2C2C;
 }
 
-#contato{
-    background-color: #333;;
-    color:white;
+.site-header {
+    background: linear-gradient(90deg, #333, #5a35c1);
+    padding: 15px 0;
+    position: sticky; /* fixo ao rolar */
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.nav-list li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-list li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+.nav-list li a:hover::after {
+    width: 100%;
+}
+
+.nav-list li a:hover {
+    color: #ddd;
+}
+
+
+#contato {
+    background-color: #2B2B2B;
+    color: white;
+}
+#contato h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+#contato p {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+    line-height: 1.6;
 }
 .contact {
-    color: #fff !important; 
-    font-size: 24px; /* Tamanho do ícone */
-    margin: 0 10px; /* Margem entre os ícones */
-    transition: color 0.3s ease; /* Efeito suave na mudança de cor ao passar o mouse */
+    color: #fff !important;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
     margin-bottom: 20px;
 }
 
 .contact:hover {
-    color: #ccc !important; /* Cor mais clara ao passar o mouse, forçada */
+    color: #AAAAAA !important;
 }
 
-#sobre{
-    
-    color:white;
-    background-color: #7a4df5;
+#sobre {
+    background-color: #6C63FF;
+    color: white;
     margin-bottom: 150px;
-    }
-    
-    #formacao{
-        margin-bottom: 150px;
-    }
-    
-    #projetos{
-        margin-bottom: 150px;
-    }
-    
-/* Deixar lado a lado*/
+}
+
+#formacao,
+#projetos {
+    margin-bottom: 150px;
+}
+
+/* Layout lateral */
 .main-content {
     display: flex;
     justify-content: space-between;
     padding: 20px;
 }
+
 .side-left, .side-right {
-    width: 45%; /* Ajusta o tamanho para 45% de cada lado */
+    width: 45%;
 }
-/* Estilo do header */
+
+/* Header */
 header {
-    background-color: #333;
+    background-color: #2B2B2B;
     padding: 10px 0;
 }
 
@@ -74,7 +136,7 @@ nav ul li a {
     font-size: 18px;
 }
 
-/* Estilo da seção de "Sobre" */
+/* Sobre */
 .about-container {
     display: flex;
     align-items: center;
@@ -86,35 +148,34 @@ nav ul li a {
     height: 300px;
     border-radius: 50%;
     margin-right: 160px;
-    border: 3px solid #ffffff; 
-    box-shadow: 0px 0px 5px #f0f0f0; 
+    border: 3px solid #ffffff;
+    box-shadow: 0px 0px 5px #f0f0f0;
 }
-
 
 .about-text {
     max-width: 600px;
 }
 
-/* Estilo das seções */
+/* Seções */
 .section-content {
     padding: 40px;
     text-align: center;
- 
 }
 
 h1, h2 {
-    color: #444;
+    color: #343A40;
     margin-bottom: 20px;
 }
 
 p {
     font-size: 18px;
     text-align: justify;
-    line-height: 1.6; /* Melhora a legibilidade */
-    margin-bottom: 20px; /* Garante espaçamento adequado com outros elementos */
+    line-height: 1.6;
+    margin-bottom: 20px;
     margin-left: 10px;
 }
-/* Estilo do carrossel */
+
+/* Carrossel */
 .carousel {
     position: relative;
     width: 80%;
@@ -130,7 +191,6 @@ p {
     align-items: center;
 }
 
-/* Transição animada com fade + movimento */
 .carousel-item {
     position: absolute;
     opacity: 0;
@@ -163,7 +223,7 @@ p {
 .carousel img.icon-imagem {
     width: 100%;
     max-width: 400px;
-    height:150px;
+    height: 150px;
     border-radius: 12px;
     margin-bottom: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -175,6 +235,8 @@ p {
     padding: 20px;
     margin-top: 10px;
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .descricao-container:hover {
@@ -186,21 +248,22 @@ p {
     padding: 12px 30px;
     font-size: 16px;
     font-weight: bold;
-    background: linear-gradient(to right, #7a4df5, #5a35c1);
+    background: linear-gradient(to right, #6C63FF, #574B90);
     color: white;
     border: none;
     border-radius: 25px;
     cursor: pointer;
     transition: background 0.3s ease-in-out;
     text-decoration: none;
+    width: 50%;
 }
 
 .btn:hover {
-    background: linear-gradient(to right, #5a35c1, #3c218e);
+    background: linear-gradient(to right, #574B90, #3C2E85);
 }
 
 .prev-btn, .next-btn {
-    background-color: #7a4df5;
+    background-color: #6C63FF;
     color: #fff;
     border: none;
     padding: 12px 18px;
@@ -216,7 +279,7 @@ p {
 }
 
 .prev-btn:hover, .next-btn:hover {
-    background-color: #5a35c1;
+    background-color: #574B90;
 }
 
 .prev-btn {
@@ -227,6 +290,7 @@ p {
     right: 10px;
 }
 
+/* Responsivo */
 @media (max-width: 768px) {
     .carousel {
         width: 95%;
@@ -242,10 +306,34 @@ p {
     .carousel img.icon-imagem {
         max-width: 100%;
     }
+
+    .main-content {
+        flex-direction: column;
+    }
+
+    .side-left, .side-right {
+        width: 100%;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-pic {
+        margin: 0 0 20px 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
 }
 
-
-/* Estilos da timeline */
+/* Timeline */
 .timeline {
     position: relative;
     max-width: 100%;
@@ -257,23 +345,44 @@ p {
     align-items: center;
     margin-bottom: 20px;
     position: relative;
+        opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+#formacao .timeline-icon,
+#formacao .timeline-content {
+    border-color: #6C63FF;
+}
+
+#experiencia .timeline-icon,
+#experiencia .timeline-content {
+    border-color: #28a745;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .timeline-icon {
     width: 20px;
     height: 20px;
-    background-color: #333;
+        background-color: inherit; /* Herdará da seção */
+    background-color: #6C63FF;
     border-radius: 50%;
     position: absolute;
     left: -10px;
 }
 
 .timeline-content {
-    margin-left: 40px; /* Distância entre o ícone e o conteúdo */
+    margin-left: 40px;
     background-color: #f9f9f9;
     padding: 15px;
     border-radius: 8px;
-    border-left: 3px solid #333;
+    border-left: 3px solid #6C63FF;
 }
 
 .timeline h3 {
@@ -292,7 +401,6 @@ p {
     line-height: 1.5;
 }
 
-/* Responsivo - Timeline linear no mobile */
 @media (max-width: 768px) {
     .timeline-item {
         flex-direction: column;
@@ -308,179 +416,210 @@ p {
         margin-left: 0;
         padding-left: 30px;
         border-left: none;
-        border-top: 3px solid #333;
-    }
-    .main-content {
-        flex-direction: column; /* Colocar um abaixo do outro */
-    }
-    .side-left, .side-right {
-        width: 100%; /* Ocupar 100% da largura */
-    }
-
-    /* Ajustar a imagem do perfil na seção 'Sobre' */
-    .about-container {
-        flex-direction: column; /* Colocar a imagem acima do texto */
-        text-align: center; /* Centralizar o conteúdo */
-    }
-    .profile-pic {
-        margin: 0 0 20px 0; /* Remover margem lateral e adicionar margem inferior */
-    }
-
-    /* Carrossel */
-    .carousel img {
-        width: 100%; /* Ajustar a largura das imagens no carrossel */
-    }
-
-    /* Navegação */
-    nav ul {
-        flex-direction: column; /* Colocar links de navegação um abaixo do outro */
-    }
-    nav ul li {
-        margin: 10px 0; /* Espaçamento entre os itens do menu */
+        border-top: 3px solid #6C63FF;
     }
 }
+
+/* Links sociais */
 .social-links {
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    font-size: 32px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
 }
 
 .social-links a {
-    margin: 0 10px; 
-    color: #333;
-    font-size: 24px; 
-    transition: color 0.3s; 
+    margin: 0 10px;
+    color: #2C2C2C;
+    font-size: 24px;
+    transition: color 0.3s;
 }
+
+.social-icon.linkedin { color: #0A66C2; }
+.social-icon.github { color: #f0f0f0; }
+.social-icon.instagram { color: #E1306C; }
+
+.social-icon.linkedin:hover { color: #0077b5; }
+.social-icon.github:hover { color: #c9c9c9; }
+.social-icon.instagram:hover { color: #ff4a85; }
 
 .social-links a:hover {
     color: #0077b5;
 }
 
 .social-links a:nth-child(2):hover {
-    color: #333; 
+    color: #343A40;
 }
 
 .social-links a:nth-child(3):hover {
-    color: #e1306c; 
+    color: #e1306c;
 }
 
-.btn { 
-     background-color: #7a4df5; 
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    width: 50%;
-}
-
-.btn:hover {
-    background-color: #0056b3;
-}
-.descricao-container {
-    display: flex;
-    flex-direction: column; 
-}
-/* icons e framey */
-
+/* Grid Frameworks */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 colunas no desktop */
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     margin-top: 20px;
     justify-items: center;
-    height: auto; /* Ajuste automático da altura */
+    height: auto;
 }
 
-/* Ajuste para que os itens ocupem um tamanho fixo e uniforme */
 .grid-item {
-    background-color: #f4f4f4;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 15px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    width: 100%; /* Ocupa todo o espaço da coluna */
-    min-height: 250px; /* Altura mínima maior para deixar os itens mais uniformes */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    width: 100%;
+    min-height: 250px;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Efeito de hover */
 .grid-item:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Ajuste das imagens */
+/* Adiciona uma borda de destaque animada */
+.grid-item::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 15px;
+    background: linear-gradient(45deg, #7a4df5, #5a35c1, #007bff, #00c9a7);
+    z-index: -1;
+    animation: glow 6s linear infinite;
+}
+@keyframes glow {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
 .grid-item img {
-    width: 80px; /* Imagens maiores */
+    width: 80px;
     height: 80px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.4s ease;
+    border-radius: 30px;
 }
 
-/* Ajuste do texto */
+.grid-item:hover img {
+    transform: rotate(8deg) scale(1.1);
+}
+
 .grid-item p {
-    font-size: 18px;
-    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+    margin: 10px 0;
     color: #333;
+    font-family: 'Arial', sans-serif;
 }
 
-/* Ajuste para telas médias (tablets) */
+.grid-item p:nth-child(3) {
+    font-weight: bold;
+    color: #6C63FF;
+}
+
 @media (max-width: 1024px) {
     .grid-container {
-        grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas médias */
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* Ajuste para telas pequenas (celulares) */
 @media (max-width: 768px) {
     .grid-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas pequenas */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Ajuste para telas muito pequenas */
 @media (max-width: 480px) {
     .grid-container {
-        grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
+        grid-template-columns: 1fr;
     }
 }
-/* #meusFrameworks{
-    max-width: 900px;
-    
-} 
-    *//* Estilo geral para os parágrafos */
-.grid-item p {
-    text-align: center;           
-    font-size: 16px;             
-    margin: 10px 0;              
-    color: #333;                  
-    font-family: 'Arial', sans-serif;  
-}
 
-/* Estilo específico para o segundo parágrafo de cada item */
-.grid-item p:nth-child(3) {
-    font-weight: bold;           
-    color: #007bff;           
-
-}
-.grid-item {
-    padding: 20px;
-    background-color: #f9f9f9;   
-    border-radius: 8px;          
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Sombra sutil */
-}
+/* Botão subir */
 .scroll-top-btn {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    top:auto;
-    background-color: #333;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #7a4df5, #5a35c1);
     color: white;
     border: none;
-    height: 50px;
-    font-size: 24px;
+    border-radius: 50%;
     cursor: pointer;
-    display: none; /* Ocultar por padrão */
+    display: none;
     z-index: 100;
-    transition: opacity 0.3s ease-in-out;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .scroll-top-btn:hover {
-    background-color: #555;
+    background: linear-gradient(135deg, #5a35c1, #3c218e);
+    transform: scale(1.1);
+}
+
+.scroll-top-btn i {
+    font-size: 22px;
+    transition: transform 0.3s;
+}
+
+.scroll-top-btn:hover i {
+    transform: translateY(-3px);
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.profile-pic {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-right: 160px;
+    border: 4px solid transparent;
+    box-shadow: 0px 0px 10px rgba(108, 99, 255, 0.6);
+    transition: transform 0.5s ease, border 0.5s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+    border: 4px solid #6C63FF;
+}
+
+@keyframes float {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
 }
