@@ -1,57 +1,56 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Portfólio de Artur Mineiro carregado com sucesso!');
 
+    // Carrossel
     const carouselItems = document.querySelectorAll('.carousel-item');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
-    const scrollTopBtn = document.getElementById('scrollTopBtn');
-
     let currentIndex = 0;
 
-    // Ativa o primeiro slide assim que a página carregar
-    carouselItems[currentIndex].classList.add('active');
+    if (carouselItems.length > 0) {
+        carouselItems[currentIndex].classList.add('active');
 
-    function showSlide(newIndex) {
-        if (newIndex === currentIndex) return;
+        function showSlide(newIndex) {
+            if (newIndex === currentIndex) return;
 
-        const currentSlide = carouselItems[currentIndex];
-        const nextSlide = carouselItems[newIndex];
+            const currentSlide = carouselItems[currentIndex];
+            const nextSlide = carouselItems[newIndex];
 
-        // Remove active do atual e aplica classe de saída
-        currentSlide.classList.remove('active');
-        currentSlide.classList.add('exit-left');
+            currentSlide.classList.remove('active');
+            currentSlide.classList.add('exit-left');
+            setTimeout(() => currentSlide.classList.remove('exit-left'), 500);
 
-        // Remove exit após a transição
-        setTimeout(() => {
-            currentSlide.classList.remove('exit-left');
-        }, 500); // 500ms deve bater com o tempo da animação no CSS
+            nextSlide.classList.add('active');
+            currentIndex = newIndex;
+        }
 
-        // Ativa o novo slide
-        nextSlide.classList.add('active');
+        prevBtn?.addEventListener('click', () => {
+            const newIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+            showSlide(newIndex);
+        });
 
-        // Atualiza o índice atual
-        currentIndex = newIndex;
+        nextBtn?.addEventListener('click', () => {
+            const newIndex = (currentIndex + 1) % carouselItems.length;
+            showSlide(newIndex);
+        });
     }
 
-    prevBtn.addEventListener('click', () => {
-        const newIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
-        showSlide(newIndex);
-    });
+    // Botão "voltar ao topo"
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
 
-    nextBtn.addEventListener('click', () => {
-        const newIndex = (currentIndex + 1) % carouselItems.length;
-        showSlide(newIndex);
-    });
-
-    // Mostrar botão de "voltar ao topo" ao rolar a página
-    window.onscroll = function () {
+    window.addEventListener('scroll', () => {
         scrollTopBtn.style.display = (document.documentElement.scrollTop > 300) ? "block" : "none";
-    };
+    });
 
-    scrollTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+    scrollTopBtn?.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Menu hamburguer
+    const toggle = document.querySelector('.menu-toggle');
+    const navList = document.querySelector('.nav-list');
+
+    toggle?.addEventListener('click', () => {
+        navList.classList.toggle('open');
     });
 });

@@ -22,6 +22,8 @@ body {
 }
 
 .navbar {
+    position: relative;
+
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -96,6 +98,7 @@ body {
     background-color: #6C63FF;
     color: white;
     margin-bottom: 150px;
+
 }
 
 #formacao,
@@ -143,14 +146,6 @@ nav ul li a {
     justify-content: center;
 }
 
-.profile-pic {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    margin-right: 160px;
-    border: 3px solid #ffffff;
-    box-shadow: 0px 0px 5px #f0f0f0;
-}
 
 .about-text {
     max-width: 600px;
@@ -292,10 +287,23 @@ p {
 
 /* Responsivo */
 @media (max-width: 768px) {
-    .carousel {
-        width: 95%;
-        padding: 20px 10px;
-        min-height: 580px;
+   .carousel {
+        gap: 15px;
+        padding: 10px 0;
+    }
+
+    .carousel-item {
+        flex: 0 0 90%;
+        padding: 15px;
+    }
+
+    .icon-imagem {
+        max-width: 100%;
+    }
+
+    .prev-btn, .next-btn {
+        font-size: 14px;
+        padding: 8px 12px;
     }
 
     .btn {
@@ -331,8 +339,68 @@ p {
     nav ul li {
         margin: 10px 0;
     }
+      .navbar .nav-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-content {
+        flex-direction: column;
+    }
+
+    .side-left, .side-right {
+        padding: 0;
+    }
+  .menu-toggle {
+    display: block;
+  }
+
+
+    .nav-list.open {
+        max-height: 300px; /* Altura ajustável conforme necessidade */
+    }
+}
+.menu-toggle {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 1001;
 }
 
+/* As 3 barrinhas */
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.hamburger::before {
+  position: absolute;
+  top: -8px;
+  left: 0;
+}
+
+.hamburger::after {
+  position: absolute;
+  top: 8px;
+  left: 0;
+}
 /* Timeline */
 .timeline {
     position: relative;
@@ -606,7 +674,7 @@ p {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    margin-right: 160px;
+ 
     border: 4px solid transparent;
     box-shadow: 0px 0px 10px rgba(108, 99, 255, 0.6);
     transition: transform 0.5s ease, border 0.5s ease;
