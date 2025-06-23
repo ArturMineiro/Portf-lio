@@ -47,10 +47,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Menu hamburguer
-    const toggle = document.querySelector('.menu-toggle');
-    const navList = document.querySelector('.nav-list');
-
-    toggle?.addEventListener('click', () => {
-        navList.classList.toggle('open');
+    const menuToggleBtn = document.getElementById('menuToggleBtn');
+    const navList = document.getElementById('nav-list');
+    
+    menuToggleBtn?.addEventListener('click', () => {
+      navList.classList.toggle('open');
+    
+      // Alternar o texto do botão
+      if (navList.classList.contains('open')) {
+        menuToggleBtn.textContent = '✖ Fechar';
+      } else {
+        menuToggleBtn.textContent = '☰ Menu';
+      }
     });
 });

@@ -287,23 +287,94 @@ p {
 
 /* Responsivo */
 @media (max-width: 768px) {
-   .carousel {
-        gap: 15px;
-        padding: 10px 0;
-    }
-
-    .carousel-item {
-        flex: 0 0 90%;
-        padding: 15px;
-    }
-
-    .icon-imagem {
+ 
+    .carousel {
+        width: 95%;
+        min-height: 400px; /* ajuste conforme o conteúdo */
+        padding: 20px 10px;
+        position: relative; /* importante manter */
+      }
+    
+      .carousel-item {
+        position: absolute; /* mantém o posicionamento para o efeito */
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all 0.5s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         max-width: 100%;
+        padding: 15px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        z-index: 1;
+      }
+    
+      .carousel-item.active {
+        opacity: 1;
+        transform: translateX(0);
+        z-index: 2;
+      }
+    
+      .carousel-item.exit-left {
+        transform: translateX(-100%);
+        opacity: 0;
+        z-index: 0;
+      }
+    
+      .carousel img.icon-imagem {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        margin-bottom: 15px;
+      }
+    
+      .descricao-container {
+        background-color: #fafafa;
+        border-radius: 10px;
+        padding: 15px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+    
+      .prev-btn, .next-btn {
+        width: 35px;
+        height: 35px;
+        padding: 0;
+        font-size: 24px;
+        line-height: 35px;
+        border-radius: 50%;
+        background-color: #6C63FF;
+        color: white;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-
-    .prev-btn, .next-btn {
-        font-size: 14px;
-        padding: 8px 12px;
+    .prev-btn {
+        left: 10px;
+        /* substituir texto pelo símbolo ‹ */
+        font-weight: bold;
+        /* limpa o conteúdo para evitar texto antigo */
+        content: '‹';
+    }
+    .prev-btn::before {
+        content: '‹';
+        display: block;
+        text-align: center;
+    }
+    .next-btn {
+        right: 10px;
+        /* substituir texto pelo símbolo › */
+        font-weight: bold;
+        content: '›';
+    }
+    .next-btn::before {
+        content: '›';
+        display: block;
+        text-align: center;
     }
 
     .btn {
@@ -311,10 +382,7 @@ p {
         font-size: 14px;
     }
 
-    .carousel img.icon-imagem {
-        max-width: 100%;
-    }
-
+  
     .main-content {
         flex-direction: column;
     }
@@ -356,51 +424,27 @@ p {
     .side-left, .side-right {
         padding: 0;
     }
-  .menu-toggle {
-    display: block;
-  }
+
 
 
     .nav-list.open {
         max-height: 300px; /* Altura ajustável conforme necessidade */
     }
 }
-.menu-toggle {
-  display: none;
-  position: relative;
-  width: 30px;
-  height: 24px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  z-index: 1001;
-}
+.menu-toggle-btn {
+    display: none;
+    background-color: #4fc3f7;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
 
-/* As 3 barrinhas */
-.hamburger,
-.hamburger::before,
-.hamburger::after {
-  content: '';
-  display: block;
-  width: 30px;
-  height: 3px;
-  background-color: white;
-  border-radius: 3px;
-  position: relative;
-  transition: all 0.3s ease;
-}
 
-.hamburger::before {
-  position: absolute;
-  top: -8px;
-  left: 0;
-}
-
-.hamburger::after {
-  position: absolute;
-  top: 8px;
-  left: 0;
-}
 /* Timeline */
 .timeline {
     position: relative;
@@ -470,6 +514,48 @@ p {
 }
 
 @media (max-width: 768px) {
+    .menu-toggle-btn {
+        display: block;
+        position: relative;
+        margin: 10px auto;
+      }
+    
+      .nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: #222;
+        /* padding: 30px 20px; */
+        border-radius: 12px;
+        position: absolute;
+        /* top: 60px; */
+         right: 40px; 
+        width: 300px;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: max-height 0.6s ease, opacity 0.4s ease, transform 0.4s ease;
+        transform: translateY(-10px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      }
+    
+      .nav-list.open {
+        max-height: 500px;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+    
+      .nav-list li {
+        text-align: right;
+        padding: 10px 0;
+      }
+    
+      .nav-list li a {
+        font-size: 18px;
+        color: #fff;
+      }
     .timeline-item {
         flex-direction: column;
         align-items: flex-start;
@@ -690,4 +776,61 @@ p {
     0%   { transform: translateY(0px); }
     50%  { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
+}
+.curriculo-download-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0;
+}
+
+.btn-download-cv {
+  background: linear-gradient(135deg, #1e90ff, #4fc3f7);
+  color: white;
+  padding: 16px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 20px rgba(30, 144, 255, 0.3);
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.btn-download-cv:hover {
+  background: linear-gradient(135deg, #0d74d1, #00bcd4);
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 191, 255, 0.5);
+}
+
+.btn-download-cv .icon i {
+  font-size: 22px;
+}
+
+.btn-download-cv .emoji {
+  animation: float 1.5s ease-in-out infinite;
+  font-size: 20px;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(79, 195, 247, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(79, 195, 247, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(79, 195, 247, 0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(-3px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
 }

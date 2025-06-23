@@ -10,20 +10,21 @@
 
 </head>
 <body>
-<header class="site-header">
-  <nav class="navbar">
-    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-list">
-      <span class="hamburger"></span>
-    </button>
-    <ul id="nav-list" class="nav-list">
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#formacao">Formação e Experiência</a></li>
-      <li><a href="#projetos">Projetos</a></li>
-      <li><a href="#meusFrameworks">Frameworks e Linguagens</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-  </nav>
-</header>
+    <header class="site-header">
+        <nav class="navbar">
+          <!-- Botão texto para expandir/recolher -->
+          <button id="menuToggleBtn" class="menu-toggle-btn">☰ Menu</button>
+      
+          <ul id="nav-list" class="nav-list">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#formacao">Formação e Experiência</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#meusFrameworks">Frameworks e Linguagens</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+      </header>
+      
 
 
 
@@ -232,7 +233,16 @@ Este é meu portfólio, e ele está em constante evolução (assim como eu). Vam
             </div>
         </div>
     </section>
-    
+
+    <div class="curriculo-download-wrapper">
+        <a href="arquivos/curriculo_artur.pdf" download class="btn-download-cv">
+          <span class="icon"><i class="fas fa-file-alt"></i></span>
+          <span class="text">Clique aqui para baixar meu currículo</span>
+          <span class="emoji">📄</span>
+        </a>
+      </div>
+      
+      
 <section id="contato" class="section-content">
     <h2 class="contact">📬 Vamos conversar?</h2>
     <p style="text-align: center; font-size: 18px;">
