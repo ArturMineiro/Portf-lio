@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Artur Mineiro's Portfolio">
+  <title>Portfolio - Artur Mineiro</title>
+  <link rel="stylesheet" href="meuPortifólio.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <button id="menuToggleBtn" class="menu-toggle-btn">☰ Menu</button>
+      <ul id="nav-list" class="nav-list">
+        <li><a href="#sobre">About</a></li>
+        <li><a href="#formacao">Education & Experience</a></li>
+        <li><a href="#projetos">Projects</a></li>
+        <li><a href="#meusFrameworks">Frameworks & Languages</a></li>
+        <li><a href="#contato">Contact</a></li>
+      <li> <a href="index.html" class="language-switch">🇧🇷 Portuguese</a></li>  
+
+      </ul>
+    </nav>
+  </header>
+
+  <button id="scrollTopBtn" class="scroll-top-btn">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- About Section -->
+  <section id="sobre" class="section-content">
+    <div class="about-container">
+      <img src="imagens/artur.jpeg" alt="Photo of Artur Mineiro" class="profile-pic" />
+      <div class="about-text">
+        <h1 class="contact">👋 Hey there! I'm Artur!</h1>
+        <p>
+          I'm passionate about solving problems with code — turning ideas into real solutions! 💡<br/><br/>
+          Currently, I work with web development using <strong>Angular</strong> and <strong>Laravel</strong>, building interfaces, APIs, and handling backend tasks with <strong>PostgreSQL</strong>. I also manage servers via <strong>FileZilla</strong> — always striving to learn more with every Git push. 🚀<br/><br/>
+          This is my portfolio — always evolving (just like me). Let's explore it together!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Experience Sections -->
+  <section class="main-content">
+    <div id="formacao" class="section-content side-left">
+      <h2>🎓 Education</h2>
+      <p style="text-align: center; font-style: italic; margin-bottom: 30px;">
+        "Learning is my daily fuel."
+      </p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-icon"></div>
+          <div class="timeline-content">
+            <h3>2021 – 2023</h3>
+            <h4>Programming Technician – Instituto Santo Inácio</h4>
+            <p>I learned programming fundamentals, focused on languages and system development.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-icon"></div>
+          <div class="timeline-content">
+            <h3>2023 – 2025</h3>
+            <h4>Systems Analysis & Development – UVA</h4>
+            <p>Deepening technology knowledge, focusing on modern and efficient solution development.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="formacao" class="section-content side-right">
+      <h2>💼 Work Experience</h2>
+      <p style="text-align: center; font-style: italic; margin-bottom: 30px;">
+        "Each professional challenge shapes my developer journey."
+      </p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-icon"></div>
+          <div class="timeline-content">
+            <h3>2019 – 2022</h3>
+            <h4>Apprentice – Bené Herzl</h4>
+            <p>Worked in administrative tasks, developing organization and responsibility skills.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-icon"></div>
+          <div class="timeline-content">
+            <h3>2022 – 2023</h3>
+            <h4>IT Intern – Atlanticont</h4>
+            <p>Worked with technical support and networks, expanding my view of corporate IT.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-icon"></div>
+          <div class="timeline-content">
+            <h3>2023 – Present</h3>
+            <h4>Web Developer – Crase Sigma</h4>
+            <p>Developing full‑stack solutions using Angular, Laravel, and PostgreSQL with focus on efficiency and quality.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section with Carousel -->
+  <section id="projetos" class="section-content">
+    <h2>Check out some of my projects:</h2>
+    <div class="carousel">
+      <div class="carousel-item">
+        <img src="imagens/projeto_portifolio.png" alt="Portfolio Project" class="icon-imagem">
+        <div class="descricao-container">
+          <p class="descricao">
+            React First Test: My first project using React with a json‑server backend. It manages my projects using a local dbjson backend via npm run backend.
+          </p>
+          <a href="https://projeto-react-firts-htdg.vercel.app/" target="_blank" class="btn">View Project</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="imagens/gerenciadorProdutos.jpeg" alt="Product Management Project" class="icon-imagem">
+        <div class="descricao-container">
+          <p>
+            This is a stock product management system built with Laravel, Bootstrap, and AdminLTE extensions.
+          </p>
+          <a href="https://github.com/ArturMineiro/gerenciamento_de_produtos" target="_blank" class="btn">View Project</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="imagens/apisimagem.png" alt="API Consumption Project" class="icon-imagem">
+        <div class="descricao-container">
+          <p>
+            A project focused on consuming several external APIs for training and expanding my knowledge in the area.
+          </p>
+          <a href="https://github.com/ArturMineiro/Consumodeapi" target="_blank" class="btn">View Project</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="imagens/gerar_carta.jpg" alt="Letter & Billing Generator Project" class="icon-imagem">
+        <div class="descricao-container">
+          <p>
+            This system allows building and client registration, generating billing letters in PDF and sending them automatically by email. It's useful for property managers or condos to automate document and billing generation.
+          </p>
+          <a href="https://github.com/ArturMineiro/gerar_carta" target="_blank" class="btn">View Project</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="imagens/contabilidade.jpg" alt="Accounting System with Charts & PDF" class="icon-imagem">
+        <div class="descricao-container">
+          <p>
+            A complete accounting system for recording transactions, accounts, and standard histories. It features PDF report generation and Python‑powered charts for a broad and visual overview of your financial flow.
+          </p>
+          <a href="https://github.com/Davidtimbo/contabilidade" target="_blank" class="btn">View Project</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="imagens/ecommerce.jpeg" alt="E-commerce Project" class="icon-imagem">
+        <div class="descricao-container">
+          <p>
+            An e-commerce project currently in production, built with Laravel and React for the front‑end.
+          </p>
+          <a href="https://github.com/ArturMineiro/e-commerce" target="_blank" class="btn">View Project</a>
+        </div>
+      </div>
+      <button class="prev-btn">Previous</button>
+      <button class="next-btn">Next</button>
+    </div>
+  </section>
+
+  <!-- Frameworks & Languages Section -->
+  <section id="meusFrameworks" class="section-content">
+    <h2>🚀 My Frameworks & Languages</h2>
+    <p style="text-align: center; margin-bottom: 30px; font-style: italic;">
+      These are the tools that accompany me in my mission to code the future!
+    </p>
+    <div class="grid-container">
+      <div class="grid-item">
+        <img src="imagens/angular-logo.png" alt="Angular Logo"><p>Angular</p><p>1 year+</p>
+      </div>
+      <div class="grid-item">
+        <img src="imagens/laravel-logo.png" alt="Laravel Logo"><p>Laravel</p><p>1 year+</p>
+      </div>
+      <div class="grid-item">
+        <img src="imagens/bootstrap-logo.png" alt="Bootstrap Logo"><p>Bootstrap</p><p>2 years</p>
+      </div>
+      <div class="grid-item">
+        <img src="imagens/react-logo.png" alt="React Logo"><p>React</p><p>1 year+</p>
+      </div>
+      <div class="grid-item">
+        <img src="imagens/ts-logo.png" alt="TypeScript Logo"><p>TypeScript</p><p>1 year+</p>
+      </div>
+      <div class="grid-item">
+        <img src="imagens/php-logo.png" alt="PHP Logo"><p>PHP</p><p>1 year+</p>
+      </div>
+      <div class="grid-item">
+        <img src="imagens/html-logo.png" alt="HTML Logo"><p>HTML</p><p>1 year+</p>
+      </div>
+      <div class="grid-item">
+        <img src="imagens/css-logo.png" alt="CSS Logo"><p>CSS</p><p>1 year+</p>
+      </div>
+      <div class="grid-item">
+        <img src="imagens/Mysql-logo.png" alt="MySQL Logo"><p>MySQL</p><p>1 year+</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download CV Section -->
+  <div class="curriculo-download-wrapper">
+    <a href="arquivos/curriculo_artur.pdf" download class="btn-download-cv">
+      <span class="icon"><i class="fas fa-file-alt"></i></span>
+      <span class="text">Click here to download my resume</span>
+      <span class="emoji">📄</span>
+    </a>
+  </div>
+
+  <!-- Contact Section -->
+  <section id="contato" class="section-content">
+    <h2 class="contact">📬 Let's Get in Touch!</h2>
+    <p style="text-align: center; font-size: 18px;">
+      Interested in my work or want to chat about a project? Shoot me an email or connect on my social channels! 😄
+    </p>
+    <p style="text-align: center; margin-top: 10px; font-size: 18px;">
+      📧 <a href="mailto:arturmineiro2@hotmail.com" style="color: #fff; text-decoration: underline;">
+        arturmineiro2@hotmail.com
+      </a>
+    </p>
+    <div class="social-links" style="text-align: center; margin-top: 20px;">
+      <a href="https://linkedin.com/in/artur-mineiro-2871b021a" target="_blank" aria-label="LinkedIn" class="social-icon linkedin">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/ArturMineiro" target="_blank" aria-label="GitHub" class="social-icon github">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.instagram.com/artur_mineiro" target="_blank" aria-label="Instagram" class="social-icon instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </section>
+
+  <script src="meuPortifólio.js"></script>
+</body>
+</html>
