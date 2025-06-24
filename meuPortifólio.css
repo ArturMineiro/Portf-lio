@@ -639,7 +639,11 @@ p {
 
 
 @media (max-width: 768px) {
-
+    p,
+    .descricao-text {
+        font-size: 11px;
+        line-height: 1.2;
+    }
     /* Ajusta o carrossel para telas pequenas */
     .carousel {
         width: 95%;
@@ -686,7 +690,7 @@ p {
     /* Imagem dentro do carrossel */
     .carousel img.icon-imagem {
         max-width: 100%;
-        height: auto;
+        height: 150px;
         border-radius: 12px;
         margin-bottom: 15px;
     }
@@ -711,27 +715,43 @@ p {
         background-color: #6C63FF;
         color: white;
         box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        text-indent: -9999px; /* esconde o texto visualmente */
+        overflow: hidden;
     }
+    
+    /* Botão esquerdo */
     .prev-btn {
         left: 10px;
-        font-weight: bold;
-        content: '‹';
     }
     .prev-btn::before {
         content: '‹';
         display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
         text-align: center;
+        text-indent: 0;
     }
+    
+    /* Botão direito */
     .next-btn {
         right: 10px;
-        font-weight: bold;
-        content: '›';
     }
     .next-btn::before {
         content: '›';
         display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
         text-align: center;
+        text-indent: 0;
     }
+    
 
     /* Botões genéricos */
     .btn {
@@ -755,6 +775,7 @@ p {
     }
 
     .profile-pic {
+        
         margin: 0 0 20px 0;
     }
 
