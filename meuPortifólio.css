@@ -1,34 +1,37 @@
-/* Reset básico */
+/* Resetando margens e paddings padrões do navegador */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilo base do corpo da página */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #F8F9FB;
     color: #2C2C2C;
 }
 
+/* Estilo do cabeçalho principal fixo no topo com gradiente */
 .site-header {
     background: linear-gradient(90deg, #333, #5a35c1);
     padding: 15px 0;
-    position: sticky; /* fixo ao rolar */
+    position: sticky; /* Fixa ao topo ao rolar */
     top: 0;
     width: 100%;
-    z-index: 999;
+    z-index: 999; /* Fica acima dos outros elementos */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Contêiner da barra de navegação */
 .navbar {
     position: relative;
-
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+/* Lista de navegação (menu) */
 .nav-list {
     display: flex;
     justify-content: center;
@@ -37,6 +40,7 @@ body {
     flex-wrap: wrap;
 }
 
+/* Estilo dos links da navegação */
 .nav-list li a {
     color: #fff;
     text-decoration: none;
@@ -46,6 +50,7 @@ body {
     transition: color 0.3s ease;
 }
 
+/* Linha que aparece ao passar o mouse nos links */
 .nav-list li a::after {
     content: "";
     position: absolute;
@@ -65,11 +70,27 @@ body {
     color: #ddd;
 }
 
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
 
 #contato {
     background-color: #2B2B2B;
     color: white;
 }
+
 #contato h2 {
     text-align: center;
     font-size: 32px;
@@ -82,6 +103,8 @@ body {
     margin-bottom: 10px;
     line-height: 1.6;
 }
+
+/* Ícones de contato */
 .contact {
     color: #fff !important;
     font-size: 24px;
@@ -98,7 +121,6 @@ body {
     background-color: #6C63FF;
     color: white;
     margin-bottom: 150px;
-
 }
 
 #formacao,
@@ -117,26 +139,11 @@ body {
     width: 45%;
 }
 
+
 /* Header */
 header {
     background-color: #2B2B2B;
     padding: 10px 0;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
 }
 
 /* Sobre */
@@ -156,12 +163,13 @@ nav ul li a {
     padding: 40px;
     text-align: center;
 }
-
+/* Títulos principais */
 h1, h2 {
     color: #343A40;
     margin-bottom: 20px;
 }
 
+/* Parágrafos com estilo justificado e espaçamento */
 p {
     font-size: 18px;
     text-align: justify;
@@ -170,7 +178,7 @@ p {
     margin-left: 10px;
 }
 
-/* Carrossel */
+/* Carrossel de projetos */
 .carousel {
     position: relative;
     width: 80%;
@@ -186,6 +194,7 @@ p {
     align-items: center;
 }
 
+/* Cada item do carrossel */
 .carousel-item {
     position: absolute;
     opacity: 0;
@@ -203,18 +212,21 @@ p {
     z-index: 1;
 }
 
+/* Item visível do carrossel */
 .carousel-item.active {
     opacity: 1;
     transform: translateX(0);
     z-index: 2;
 }
 
+/* Animação para item que sai à esquerda */
 .carousel-item.exit-left {
     transform: translateX(-100%);
     opacity: 0;
     z-index: 0;
 }
 
+/* Estilo das imagens no carrossel */
 .carousel img.icon-imagem {
     width: 100%;
     max-width: 400px;
@@ -224,6 +236,7 @@ p {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Caixa de descrição dos projetos */
 .descricao-container {
     background-color: #fafafa;
     border-radius: 10px;
@@ -234,10 +247,12 @@ p {
     flex-direction: column;
 }
 
+/* Animação ao passar o mouse */
 .descricao-container:hover {
     transform: scale(1.02);
 }
 
+/* Botão de ação dos projetos */
 .btn {
     margin-top: 20px;
     padding: 12px 30px;
@@ -257,6 +272,7 @@ p {
     background: linear-gradient(to right, #574B90, #3C2E85);
 }
 
+/* Botões de navegação do carrossel */
 .prev-btn, .next-btn {
     background-color: #6C63FF;
     color: #fff;
@@ -285,152 +301,7 @@ p {
     right: 10px;
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
- 
-    .carousel {
-        width: 95%;
-        min-height: 400px; /* ajuste conforme o conteúdo */
-        padding: 20px 10px;
-        position: relative; /* importante manter */
-      }
-    
-      .carousel-item {
-        position: absolute; /* mantém o posicionamento para o efeito */
-        top: 0;
-        left: 0;
-        width: 100%;
-        opacity: 0;
-        transform: translateX(100%);
-        transition: all 0.5s ease-in-out;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        max-width: 100%;
-        padding: 15px;
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        z-index: 1;
-      }
-    
-      .carousel-item.active {
-        opacity: 1;
-        transform: translateX(0);
-        z-index: 2;
-      }
-    
-      .carousel-item.exit-left {
-        transform: translateX(-100%);
-        opacity: 0;
-        z-index: 0;
-      }
-    
-      .carousel img.icon-imagem {
-        max-width: 100%;
-        height: auto;
-        border-radius: 12px;
-        margin-bottom: 15px;
-      }
-    
-      .descricao-container {
-        background-color: #fafafa;
-        border-radius: 10px;
-        padding: 15px;
-        width: 100%;
-        box-sizing: border-box;
-      }
-    
-      .prev-btn, .next-btn {
-        width: 35px;
-        height: 35px;
-        padding: 0;
-        font-size: 24px;
-        line-height: 35px;
-        border-radius: 50%;
-        background-color: #6C63FF;
-        color: white;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    .prev-btn {
-        left: 10px;
-        /* substituir texto pelo símbolo ‹ */
-        font-weight: bold;
-        /* limpa o conteúdo para evitar texto antigo */
-        content: '‹';
-    }
-    .prev-btn::before {
-        content: '‹';
-        display: block;
-        text-align: center;
-    }
-    .next-btn {
-        right: 10px;
-        /* substituir texto pelo símbolo › */
-        font-weight: bold;
-        content: '›';
-    }
-    .next-btn::before {
-        content: '›';
-        display: block;
-        text-align: center;
-    }
-
-    .btn {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-
-  
-    .main-content {
-        flex-direction: column;
-    }
-
-    .side-left, .side-right {
-        width: 100%;
-    }
-
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .profile-pic {
-        margin: 0 0 20px 0;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-      .navbar .nav-list {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .main-content {
-        flex-direction: column;
-    }
-
-    .side-left, .side-right {
-        padding: 0;
-    }
-
-
-
-    .nav-list.open {
-        max-height: 300px; /* Altura ajustável conforme necessidade */
-    }
-}
+/* Botão do menu para telas pequenas */
 .menu-toggle-btn {
     display: none;
     background-color: #4fc3f7;
@@ -442,36 +313,36 @@ p {
     font-weight: bold;
     cursor: pointer;
     margin-bottom: 10px;
-  }
+}
 
-
-/* Timeline */
+/* Estilização da timeline (formação e experiência) */
 .timeline {
     position: relative;
     max-width: 100%;
     margin: 0 auto;
 }
 
+/* Itens da timeline com animação fadeInUp */
 .timeline-item {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
     position: relative;
-        opacity: 0;
+    opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 0.8s ease forwards;
 }
 
-#formacao .timeline-icon,
-#formacao .timeline-content {
+/* Cor dos itens da timeline por seção */
+#formacao .timeline-icon, #formacao .timeline-content {
     border-color: #6C63FF;
 }
 
-#experiencia .timeline-icon,
-#experiencia .timeline-content {
+#experiencia .timeline-icon, #experiencia .timeline-content {
     border-color: #28a745;
 }
 
+/* Animação de fade */
 @keyframes fadeInUp {
     to {
         opacity: 1;
@@ -479,16 +350,17 @@ p {
     }
 }
 
+/* Círculo da timeline */
 .timeline-icon {
     width: 20px;
     height: 20px;
-        background-color: inherit; /* Herdará da seção */
     background-color: #6C63FF;
     border-radius: 50%;
     position: absolute;
     left: -10px;
 }
 
+/* Caixa de conteúdo da timeline */
 .timeline-content {
     margin-left: 40px;
     background-color: #f9f9f9;
@@ -497,6 +369,7 @@ p {
     border-left: 3px solid #6C63FF;
 }
 
+/* Títulos na timeline */
 .timeline h3 {
     font-size: 18px;
     margin: 0;
@@ -513,68 +386,7 @@ p {
     line-height: 1.5;
 }
 
-@media (max-width: 768px) {
-    .menu-toggle-btn {
-        display: block;
-        position: relative;
-        margin: 10px auto;
-      }
-    
-      .nav-list {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        background-color: #222;
-        /* padding: 30px 20px; */
-        border-radius: 12px;
-        position: absolute;
-        /* top: 60px; */
-         right: 40px; 
-        width: 300px;
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        pointer-events: none;
-        transition: max-height 0.6s ease, opacity 0.4s ease, transform 0.4s ease;
-        transform: translateY(-10px);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      }
-    
-      .nav-list.open {
-        max-height: 500px;
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateY(0);
-      }
-    
-      .nav-list li {
-        text-align: right;
-        padding: 10px 0;
-      }
-    
-      .nav-list li a {
-        font-size: 18px;
-        color: #fff;
-      }
-    .timeline-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .timeline-icon {
-        left: -10px;
-        top: 0;
-    }
-
-    .timeline-content {
-        margin-left: 0;
-        padding-left: 30px;
-        border-left: none;
-        border-top: 3px solid #6C63FF;
-    }
-}
-
-/* Links sociais */
+/* Links das redes sociais */
 .social-links {
     display: flex;
     justify-content: center;
@@ -582,6 +394,7 @@ p {
     margin-top: 20px;
 }
 
+/* Ícones sociais com animação */
 .social-icon {
     font-size: 32px;
     transition: transform 0.3s ease, color 0.3s ease;
@@ -591,6 +404,7 @@ p {
     transform: scale(1.2);
 }
 
+/* Estilo base e hover dos ícones sociais */
 .social-links a {
     margin: 0 10px;
     color: #2C2C2C;
@@ -606,19 +420,7 @@ p {
 .social-icon.github:hover { color: #c9c9c9; }
 .social-icon.instagram:hover { color: #ff4a85; }
 
-.social-links a:hover {
-    color: #0077b5;
-}
-
-.social-links a:nth-child(2):hover {
-    color: #343A40;
-}
-
-.social-links a:nth-child(3):hover {
-    color: #e1306c;
-}
-
-/* Grid Frameworks */
+/* Grid de frameworks e linguagens */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -628,6 +430,7 @@ p {
     height: auto;
 }
 
+/* Cada item da grid de tecnologias */
 .grid-item {
     background: linear-gradient(145deg, #ffffff, #f0f0f0);
     padding: 20px;
@@ -641,10 +444,12 @@ p {
     overflow: hidden;
 }
 
+/* Animação de destaque ao passar o mouse */
 .grid-item:hover {
     transform: translateY(-10px) scale(1.03);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
+
 
 /* Adiciona uma borda de destaque animada */
 .grid-item::before {
@@ -695,11 +500,6 @@ p {
     }
 }
 
-@media (max-width: 768px) {
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
 @media (max-width: 480px) {
     .grid-container {
@@ -756,6 +556,7 @@ p {
         transform: translateY(0);
     }
 }
+/* imagem de perfil e animações */
 .profile-pic {
     width: 300px;
     height: 300px;
@@ -777,6 +578,7 @@ p {
     50%  { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
 }
+/* botao de dowload */
 .curriculo-download-wrapper {
   display: flex;
   justify-content: center;
@@ -833,4 +635,213 @@ p {
   50% {
     transform: translateY(3px);
   }
+}
+
+
+@media (max-width: 768px) {
+
+    /* Ajusta o carrossel para telas pequenas */
+    .carousel {
+        width: 95%;
+        min-height: 400px; 
+        padding: 20px 10px;
+        position: relative;
+    }
+
+    /* Cada item do carrossel posicionado para efeito de transição */
+    .carousel-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all 0.5s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 100%;
+        padding: 15px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        z-index: 1;
+    }
+
+    /* Item ativo do carrossel */
+    .carousel-item.active {
+        opacity: 1;
+        transform: translateX(0);
+        z-index: 2;
+    }
+
+    /* Item saindo à esquerda */
+    .carousel-item.exit-left {
+        transform: translateX(-100%);
+        opacity: 0;
+        z-index: 0;
+    }
+
+    /* Imagem dentro do carrossel */
+    .carousel img.icon-imagem {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        margin-bottom: 15px;
+    }
+
+    /* Container de descrição do projeto */
+    .descricao-container {
+        background-color: #fafafa;
+        border-radius: 10px;
+        padding: 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Botões do carrossel com ícones de seta */
+    .prev-btn, .next-btn {
+        width: 35px;
+        height: 35px;
+        padding: 0;
+        font-size: 24px;
+        line-height: 35px;
+        border-radius: 50%;
+        background-color: #6C63FF;
+        color: white;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .prev-btn {
+        left: 10px;
+        font-weight: bold;
+        content: '‹';
+    }
+    .prev-btn::before {
+        content: '‹';
+        display: block;
+        text-align: center;
+    }
+    .next-btn {
+        right: 10px;
+        font-weight: bold;
+        content: '›';
+    }
+    .next-btn::before {
+        content: '›';
+        display: block;
+        text-align: center;
+    }
+
+    /* Botões genéricos */
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    /* Layout principal em coluna */
+    .main-content {
+        flex-direction: column;
+    }
+
+    .side-left, .side-right {
+        width: 100%;
+        padding: 0;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-pic {
+        margin: 0 0 20px 0;
+    }
+
+    /* Navbar responsiva */
+    nav ul, .navbar .nav-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .nav-list.open {
+        max-height: 300px;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .menu-toggle-btn {
+        display: block;
+        position: relative;
+        margin: 10px auto;
+        z-index: 1001;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        background-color: #222;
+        border-radius: 12px;
+        position: absolute;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%) translateY(-10px);
+        width: 90%;
+        max-width: 300px;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: max-height 0.6s ease, opacity 0.4s ease, transform 0.4s ease;
+        z-index: 1000;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-list.open {
+        max-height: 500px;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    .nav-list li {
+        text-align: right;
+        padding: 10px 0;
+    }
+
+    .nav-list li a {
+        font-size: 18px;
+        color: #fff;
+    }
+
+    /* Timeline responsiva */
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .timeline-icon {
+        left: -10px;
+        top: 0;
+    }
+
+    .timeline-content {
+        margin-left: 0;
+        padding-left: 30px;
+        border-left: none;
+        border-top: 3px solid #6C63FF;
+    }
+
+    /* Currículo */
+    .curriculo-download-wrapper {
+        margin: 20px 20px 20px;
+    }
 }
