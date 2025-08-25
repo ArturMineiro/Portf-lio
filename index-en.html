@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Artur Mineiro's Portfolio">
   <title>Portfolio - Artur Mineiro</title>
-  <link rel="stylesheet" href="meuPortifólio.css" />
+  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
@@ -45,7 +45,7 @@
 
   <!-- Education & Experience Sections -->
   <section class="main-content">
-    <div id="formacao" class="section-content side-left">
+    <div id="education" class="section-content side-left">
       <h2>🎓 Education</h2>
       <p style="text-align: center; font-style: italic; margin-bottom: 30px;">
         "Learning is my daily fuel."
@@ -54,118 +54,139 @@
         <div class="timeline-item">
           <div class="timeline-icon"></div>
           <div class="timeline-content">
-            <h3>2021 – 2023</h3>
-            <h4>Programming Technician – Instituto Santo Inácio</h4>
-            <p>I learned programming fundamentals, focused on languages and system development.</p>
+            <h3>2023 - 2025</h3>
+            <h4>Faculdade Veiga de Almeida (UVA)</h4>
+            <p>Undergraduate course in Systems Analysis and Development. I am deepening my knowledge in software engineering, databases, and developing modern solutions focused on high performance and scalability.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-icon"></div>
           <div class="timeline-content">
-            <h3>2023 – 2025</h3>
-            <h4>Systems Analysis & Development – UVA</h4>
-            <p>Deepening technology knowledge, focusing on modern and efficient solution development.</p>
+            <h3>2021 - 2023</h3>
+            <h4>Instituto Santo Inácio</h4>
+            <p>Technical course in Programming. I gained hands-on experience with programming logic, system structuring, and building web applications from the ground up, including HTML, CSS, and an introduction to modern frameworks.</p>
           </div>
         </div>
       </div>
     </div>
-
-    <div id="formacao" class="section-content side-right">
-      <h2>💼 Work Experience</h2>
+  
+    <div id="experience" class="section-content side-right">
+      <h2>💼 Professional Experience</h2>
       <p style="text-align: center; font-style: italic; margin-bottom: 30px;">
-        "Each professional challenge shapes my developer journey."
+        "Each professional challenge shapes my journey as a developer."
       </p>
       <div class="timeline">
         <div class="timeline-item">
           <div class="timeline-icon"></div>
           <div class="timeline-content">
-            <h3>2019 – 2022</h3>
-            <h4>Apprentice – Bené Herzl</h4>
-            <p>Worked in administrative tasks, developing organization and responsibility skills.</p>
+            <h3>2023 - Present</h3>
+            <h4>Crase Sigma — Web Developer</h4>
+            <p>I work as a full-stack developer on a legacy PHP system, using Laravel on the backend and Angular on the frontend. My tasks include implementing new features, fixing bugs, and optimizing performance. I use PostgreSQL as the database and contribute directly to solutions that increase the efficiency and scalability of internal processes. One highlight was developing the property rental feature, which solved a recurring problem on the company's platform.</p>
           </div>
         </div>
+  
         <div class="timeline-item">
           <div class="timeline-icon"></div>
           <div class="timeline-content">
-            <h3>2022 – 2023</h3>
-            <h4>IT Intern – Atlanticont</h4>
-            <p>Worked with technical support and networks, expanding my view of corporate IT.</p>
+            <h3>2022 - 2023</h3>
+            <h4>Atlanticont LTDA — IT Intern</h4>
+            <p>I worked in technical support and infrastructure, providing remote and onsite customer service. I was responsible for hardware and software maintenance, printer troubleshooting, and system installations, which expanded my understanding of corporate environments and user support.</p>
           </div>
         </div>
+  
         <div class="timeline-item">
           <div class="timeline-icon"></div>
           <div class="timeline-content">
-            <h3>2023 – Present</h3>
-            <h4>Web Developer – Crase Sigma</h4>
-            <p>Developing full‑stack solutions using Angular, Laravel, and PostgreSQL with focus on efficiency and quality.</p>
+            <h3>2019 - 2022</h3>
+            <h4>Bené Herzl — Apprentice</h4>
+            <p>Experience in administrative roles where I developed organizational skills, responsibility, and professional discipline—qualities that contributed to my personal growth and workplace communication.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+  
 
   <!-- Projects Section with Carousel -->
   <section id="projetos" class="section-content">
     <h2>Check out some of my projects:</h2>
-    <div class="carousel">
-      <div class="carousel-item">
-        <img src="imagens/projeto_portifolio.png" alt="Portfolio Project" class="icon-imagem">
-        <div class="descricao-container">
-          <p class="descricao">
-            React First Test: My first project using React with a json‑server backend. It manages my projects using a local dbjson backend via npm run backend.
+  
+    <div class="projetos-grid">
+      <!-- Projeto 1 -->
+      <div class="projeto-card">
+        <img src="imagens/projeto_portifolio.png" alt="Portfolio Project">
+        <div class="projeto-info">
+          <h3>Portfolio in React</h3>
+          <p>
+            React First Test: My first project using React with a json-server backend.
+            It manages my projects using a local dbjson backend via npm run backend.
           </p>
           <a href="https://projeto-react-firts-htdg.vercel.app/" target="_blank" class="btn">View Project</a>
         </div>
       </div>
-      <div class="carousel-item">
-        <img src="imagens/gerenciadorProdutos.jpeg" alt="Product Management Project" class="icon-imagem">
-        <div class="descricao-container">
+  
+      <!-- Projeto 2 -->
+      <div class="projeto-card">
+        <img src="imagens/gerenciadorProdutos.jpeg" alt="Product Management Project">
+        <div class="projeto-info">
+          <h3>Product Management</h3>
           <p>
-            This is a stock product management system built with Laravel, Bootstrap, and AdminLTE extensions.
+            A stock management system built with Laravel, Bootstrap, and AdminLTE extensions.
           </p>
           <a href="https://github.com/ArturMineiro/gerenciamento_de_produtos" target="_blank" class="btn">View Project</a>
         </div>
       </div>
-      <div class="carousel-item">
-        <img src="imagens/apisimagem.png" alt="API Consumption Project" class="icon-imagem">
-        <div class="descricao-container">
+  
+      <!-- Projeto 3 -->
+      <div class="projeto-card">
+        <img src="imagens/apisimagem.png" alt="API Consumption Project">
+        <div class="projeto-info">
+          <h3>API Consumption</h3>
           <p>
-            A project focused on consuming several external APIs for training and expanding my knowledge in the area.
+            A project focused on consuming several external APIs for training and expanding my knowledge.
           </p>
           <a href="https://github.com/ArturMineiro/Consumodeapi" target="_blank" class="btn">View Project</a>
         </div>
       </div>
-      <div class="carousel-item">
-        <img src="imagens/gerar_carta.jpg" alt="Letter & Billing Generator Project" class="icon-imagem">
-        <div class="descricao-container">
+  
+      <!-- Projeto 4 -->
+      <div class="projeto-card">
+        <img src="imagens/gerar_carta.jpg" alt="Letter & Billing Generator Project">
+        <div class="projeto-info">
+          <h3>Letter & Billing Generator</h3>
           <p>
-            This system allows building and client registration, generating billing letters in PDF and sending them automatically by email. It's useful for property managers or condos to automate document and billing generation.
+            System for client/building registration, generating billing letters in PDF and sending them by email.
           </p>
           <a href="https://github.com/ArturMineiro/gerar_carta" target="_blank" class="btn">View Project</a>
         </div>
       </div>
-      <div class="carousel-item">
-        <img src="imagens/contabilidade.jpg" alt="Accounting System with Charts & PDF" class="icon-imagem">
-        <div class="descricao-container">
+  
+      <!-- Projeto 5 -->
+      <div class="projeto-card">
+        <img src="imagens/contabilidade.jpg" alt="Accounting System with Charts & PDF">
+        <div class="projeto-info">
+          <h3>Accounting System</h3>
           <p>
-            A complete accounting system for recording transactions, accounts, and standard histories. It features PDF report generation and Python‑powered charts for a broad and visual overview of your financial flow.
+            A complete accounting system for recording transactions and accounts. Includes PDF reports and Python charts.
           </p>
           <a href="https://github.com/Davidtimbo/contabilidade" target="_blank" class="btn">View Project</a>
         </div>
       </div>
-      <div class="carousel-item">
-        <img src="imagens/ecommerce.jpeg" alt="E-commerce Project" class="icon-imagem">
-        <div class="descricao-container">
+  
+      <!-- Projeto 6 -->
+      <div class="projeto-card">
+        <img src="imagens/ecommerce.jpeg" alt="E-commerce Project">
+        <div class="projeto-info">
+          <h3>E-commerce</h3>
           <p>
-            An e-commerce project currently in production, built with Laravel and React for the front‑end.
+            An e-commerce project currently in development, built with Laravel and React.
           </p>
           <a href="https://github.com/ArturMineiro/e-commerce" target="_blank" class="btn">View Project</a>
         </div>
       </div>
-      <button class="prev-btn">Previous</button>
-      <button class="next-btn">Next</button>
     </div>
   </section>
+  
 
   <!-- Frameworks & Languages Section -->
   <section id="meusFrameworks" class="section-content">
