@@ -10,14 +10,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Pega o código do repositório
       - name: Checkout código
         uses: actions/checkout@v3
 
+      # 2️⃣ Upload via FTP para Hostinger
       - name: Upload via FTP para Hostinger
         uses: SamKirkland/FTP-Deploy-Action@v4.3.0
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./Portf-lio/
-          server-dir: /public_html/arturportfolio/
+          local-dir: ./ # raiz do repositório
+          server-dir: /public_html/arturportfolio/ # raiz do subdomínio
+          dangerous-clean-slate: true # força sobrescrever tudo
+
+          # Ignorar arquivos desnecessários
+          exclude: |
+            .git*
+            .github*
+            README.md
+            node_modules*
