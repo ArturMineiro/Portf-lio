@@ -1,28 +1,17 @@
-name: CI/CD React Vite to Hostinger
+name: Deploy HTML/CSS/JS to Hostinger
 
 on:
   push:
     branches:
-      - main   # dispara sempre que houver push na branch main
+      - main   # roda sempre que fizer push na main
 
 jobs:
-  build-deploy:
+  deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout código
         uses: actions/checkout@v3
-
-      - name: Instalar Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Instalar dependências
-        run: npm install
-
-      - name: Build do projeto
-        run: npm run build
 
       - name: Upload via FTP para Hostinger
         uses: SamKirkland/FTP-Deploy-Action@v4
@@ -30,5 +19,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist
+          local-dir: ./   # manda tudo do projeto
           server-dir: /public_html
