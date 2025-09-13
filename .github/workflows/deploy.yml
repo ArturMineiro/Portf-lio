@@ -23,7 +23,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./ # raiz do repositório
           server-dir: /public_html/arturportfolio/ # raiz do subdomínio
-          dangerous-clean-slate: true # força sobrescrever tudo
 
           # Ignorar arquivos desnecessários
           exclude: |
