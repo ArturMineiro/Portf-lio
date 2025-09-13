@@ -3,7 +3,7 @@ name: Deploy HTML/CSS/JS to Hostinger
 on:
   push:
     branches:
-      - main   # roda sempre que fizer push na main
+      - main
 
 jobs:
   deploy:
@@ -19,5 +19,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./   # manda tudo do projeto
+          local-dir: ./ # manda todos os arquivos do repo
           server-dir: /public_html
