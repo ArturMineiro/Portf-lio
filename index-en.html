@@ -1,284 +1,630 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Portfolio of Artur Mineiro, web developer experienced in Laravel, Angular, React, PHP, TypeScript and PostgreSQL.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Portfolio of Artur Mineiro, web developer with experience in Laravel, Angular, React, PHP, TypeScript and PostgreSQL."
+  />
   <title>Portfolio - Artur Mineiro</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-  <link rel="icon" href="imagens/favicon.png" type="image/png">
+  <link rel="icon" href="imagens/favicon.png" type="image/png" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#38bdf8",
+            primaryDark: "#0ea5e9",
+            darkBg: "#0f172a",
+            darkCard: "#1e293b",
+          },
+          boxShadow: {
+            glow: "0 0 25px rgba(56, 189, 248, 0.25)",
+            glowStrong: "0 0 35px rgba(56, 189, 248, 0.4)",
+          },
+        },
+      },
+    };
+  </script>
 </head>
-<body>
-  <header class="site-header">
-    <nav class="navbar">
-      <button id="menuToggleBtn" class="menu-toggle-btn">☰ Menu</button>
-      <ul id="nav-list" class="nav-list">
-        <li><a href="#sobre">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projetos">Projects</a></li>
-        <li><a href="#meusFrameworks">Technologies</a></li>
-        <li><a href="#contato">Contact</a></li>
-        <li><a href="index.html" class="language-switch">🇧🇷 Portuguese</a></li>
+<body class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-100 font-sans">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <a href="#about" class="text-lg font-bold text-sky-400">
+        Artur Mineiro
+      </a>
+
+      <button
+        id="menuToggleBtn"
+        class="md:hidden text-sky-400 text-2xl"
+        aria-label="Open menu"
+      >
+        ☰
+      </button>
+
+      <ul
+        id="nav-list"
+        class="hidden md:flex items-center gap-6 text-sm font-medium"
+      >
+        <li><a href="#about" class="transition hover:text-sky-400">About</a></li>
+        <li><a href="#education" class="transition hover:text-sky-400">Education</a></li>
+        <li><a href="#experience" class="transition hover:text-sky-400">Experience</a></li>
+        <li><a href="#projects" class="transition hover:text-sky-400">Projects</a></li>
+        <li><a href="#technologies" class="transition hover:text-sky-400">Technologies</a></li>
+        <li><a href="#contact" class="transition hover:text-sky-400">Contact</a></li>
+        <li>
+          <a href="index.html" class="rounded-full border border-sky-400/40 px-4 py-2 text-sky-300 transition hover:bg-sky-400 hover:text-slate-950">
+            🇧🇷 Portuguese
+          </a>
+        </li>
       </ul>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobileMenu"
+      class="hidden border-t border-white/10 bg-slate-950/95 px-6 py-4 md:hidden"
+    >
+      <ul class="flex flex-col gap-4 text-sm font-medium">
+        <li><a href="#about" class="mobile-link transition hover:text-sky-400">About</a></li>
+        <li><a href="#education" class="mobile-link transition hover:text-sky-400">Education</a></li>
+        <li><a href="#experience" class="mobile-link transition hover:text-sky-400">Experience</a></li>
+        <li><a href="#projects" class="mobile-link transition hover:text-sky-400">Projects</a></li>
+        <li><a href="#technologies" class="mobile-link transition hover:text-sky-400">Technologies</a></li>
+        <li><a href="#contact" class="mobile-link transition hover:text-sky-400">Contact</a></li>
+        <li>
+          <a href="index.html" class="mobile-link inline-block rounded-full border border-sky-400/40 px-4 py-2 text-sky-300 transition hover:bg-sky-400 hover:text-slate-950">
+            🇧🇷 Portuguese
+          </a>
+        </li>
+      </ul>
+    </div>
   </header>
 
-  <button id="scrollTopBtn" class="scroll-top-btn">
+  <!-- Scroll Top -->
+  <button
+    id="scrollTopBtn"
+    class="fixed bottom-6 right-6 z-50 hidden h-12 w-12 rounded-full bg-sky-400 text-slate-950 shadow-lg transition hover:scale-110 hover:bg-sky-500"
+    aria-label="Back to top"
+  >
     <i class="fas fa-arrow-up"></i>
   </button>
 
-  <section id="sobre" class="section-content">
-    <div class="about-container">
-      <img src="imagens/artur.jpeg" alt="Photo of Artur Mineiro" class="profile-pic" />
-      <div class="about-text">
-        <h1 class="contact">Hello, I'm Artur Mineiro 👋</h1>
-        <p>
-          I am a web developer with experience in building business-oriented applications and solutions, working across both front-end and back-end development.
-          I mainly work with <strong>Angular</strong>, <strong>Laravel</strong>, <strong>PHP</strong>, <strong>TypeScript</strong>, and <strong>PostgreSQL</strong>, contributing to interface development, API creation, system maintenance, and feature implementation.
-          <br><br>
-          I am motivated by creating solutions that are not only functional, but also scalable, well-structured, and aligned with real business needs.
-          This portfolio brings together part of my professional journey, experience, and projects that represent my growth in technology.
+  <!-- About -->
+  <section id="about" class="mx-auto max-w-6xl px-6 py-20">
+    <div class="grid items-center gap-10 md:grid-cols-[240px_1fr]">
+      <div class="flex justify-center">
+        <img
+          src="imagens/artur.jpeg"
+          alt="Photo of Artur Mineiro"
+          class="h-56 w-56 rounded-full border-4 border-sky-400 object-cover shadow-glow transition duration-300 hover:scale-105"
+        />
+      </div>
+
+      <div>
+        <h1 class="mb-6 text-3xl font-bold text-sky-400 md:text-5xl">
+          Hello, I'm Artur Mineiro 👋
+        </h1>
+
+        <p class="text-base leading-8 text-slate-300 md:text-lg">
+          I am a web developer with experience in building business-focused applications and solutions, working across both front-end and back-end development.
+          I mainly work with <strong class="text-white">Angular</strong>, <strong class="text-white">Laravel</strong>, <strong class="text-white">PHP</strong>, <strong class="text-white">TypeScript</strong> and <strong class="text-white">PostgreSQL</strong>, contributing to interface development, API creation, system maintenance and the implementation of new features.
+          <br /><br />
+          I am interested in building solutions that are not only functional, but also scalable, organized and aligned with the real needs of users and businesses.
+          This portfolio brings together part of my journey, experience and projects that represent my growth as a technology professional.
         </p>
       </div>
     </div>
   </section>
 
-  <section class="main-content">
-    <div id="education" class="section-content side-left">
-      <h2>🎓 Education</h2>
-      <p style="text-align: center; font-style: italic; margin-bottom: 30px;">
+  <!-- Education + Experience -->
+  <section class="mx-auto grid max-w-6xl gap-12 px-6 py-8 lg:grid-cols-2">
+
+    <!-- Education -->
+    <div id="education">
+      <h2 class="mb-4 text-3xl font-bold text-sky-400">🎓 Education</h2>
+      <p class="mb-8 text-center italic text-slate-400">
         "Continuous learning is the foundation of my professional growth."
       </p>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-icon"></div>
-          <div class="timeline-content">
-            <h3>2023 - 2025</h3>
-            <h4>Veiga de Almeida University (UVA)</h4>
-            <p>
-              Degree in Systems Analysis and Development, focused on software development,
-              databases, system architecture, and modern solutions built for performance and scalability.
-            </p>
-          </div>
+
+      <div class="relative border-l-2 border-sky-400 pl-6 space-y-8">
+        <div class="relative rounded-2xl bg-slate-800/60 p-6 shadow-glow transition hover:-translate-y-1">
+          <span class="absolute -left-[33px] top-8 h-4 w-4 rounded-full border-4 border-slate-950 bg-sky-400"></span>
+          <h3 class="text-lg font-bold text-sky-400">2023 - 2025</h3>
+          <h4 class="mt-1 text-xl font-semibold text-white">Veiga de Almeida University (UVA)</h4>
+          <p class="mt-3 leading-7 text-slate-300">
+            Degree in Systems Analysis and Development, focused on software development,
+            databases, system architecture and modern solutions built for performance and scalability.
+          </p>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-icon"></div>
-          <div class="timeline-content">
-            <h3>2021 - 2023</h3>
-            <h4>Instituto Santo Inácio</h4>
-            <p>
-              Technical degree in Programming, with a solid foundation in programming logic,
-              system structuring, and web application development using HTML, CSS, JavaScript, and modern framework fundamentals.
-            </p>
-          </div>
+        <div class="relative rounded-2xl bg-slate-800/60 p-6 shadow-glow transition hover:-translate-y-1">
+          <span class="absolute -left-[33px] top-8 h-4 w-4 rounded-full border-4 border-slate-950 bg-sky-400"></span>
+          <h3 class="text-lg font-bold text-sky-400">2021 - 2023</h3>
+          <h4 class="mt-1 text-xl font-semibold text-white">Instituto Santo Inácio</h4>
+          <p class="mt-3 leading-7 text-slate-300">
+            Technical degree in Programming, with a solid foundation in programming logic,
+            system structure and web application development using HTML, CSS, JavaScript and the fundamentals of modern frameworks.
+          </p>
         </div>
       </div>
     </div>
 
-    <div id="experience" class="section-content side-right">
-      <h2>💼 Professional Experience</h2>
-      <p style="text-align: center; font-style: italic; margin-bottom: 30px;">
-        "Each experience strengthens both my technical and problem-solving skills."
+    <!-- Experience -->
+    <div id="experience">
+      <h2 class="mb-4 text-3xl font-bold text-sky-400">💼 Professional Experience</h2>
+      <p class="mb-8 text-center italic text-slate-400">
+        "Each experience helps expand my technical vision and ability to deliver."
       </p>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-icon"></div>
-          <div class="timeline-content">
-            <h3>2023 - Present</h3>
-            <h4>Crase Sigma — Web Developer</h4>
-            <p>
-              I work on the development and maintenance of web systems, using <strong>Laravel</strong> on the back-end and <strong>Angular</strong> on the front-end.
-              My responsibilities include building new features, fixing bugs, integrating application layers, and improving internal processes.
-              I also work with <strong>PostgreSQL</strong> for data management and contribute to solutions focused on efficiency, stability, and scalability.
-              One notable delivery was the development of a property rental feature designed to solve a recurring business need on the platform.
-            </p>
-          </div>
+
+      <div class="relative border-l-2 border-sky-400 pl-6 space-y-8">
+        <div class="relative rounded-2xl bg-slate-800/60 p-6 shadow-glow transition hover:-translate-y-1">
+          <span class="absolute -left-[33px] top-8 h-4 w-4 rounded-full border-4 border-slate-950 bg-sky-400"></span>
+          <h3 class="text-lg font-bold text-sky-400">2023 - Present</h3>
+          <h4 class="mt-1 text-xl font-semibold text-white">Crase Sigma — Web Developer</h4>
+          <p class="mt-3 leading-7 text-slate-300">
+            I work on the development and maintenance of web systems, using <strong class="text-white">Laravel</strong> on the back-end and <strong class="text-white">Angular</strong> on the front-end.
+            I take part in implementing new features, fixing bugs, integrating application layers and optimizing internal processes.
+            I also use <strong class="text-white">PostgreSQL</strong> for data management and contribute to improvements focused on efficiency, stability and scalability.
+            One relevant delivery was the development of a property rental feature created to solve a recurring system need.
+          </p>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-icon"></div>
-          <div class="timeline-content">
-            <h3>2022 - 2023</h3>
-            <h4>Atlanticont LTDA — IT Intern</h4>
-            <p>
-              Worked in technical support and infrastructure, providing remote and on-site assistance,
-              maintaining hardware and software, installing systems, and troubleshooting devices and printers.
-              This role strengthened my technical support foundation and my experience with corporate IT routines.
-            </p>
-          </div>
+        <div class="relative rounded-2xl bg-slate-800/60 p-6 shadow-glow transition hover:-translate-y-1">
+          <span class="absolute -left-[33px] top-8 h-4 w-4 rounded-full border-4 border-slate-950 bg-sky-400"></span>
+          <h3 class="text-lg font-bold text-sky-400">2022 - 2023</h3>
+          <h4 class="mt-1 text-xl font-semibold text-white">Atlanticont LTDA — IT Intern</h4>
+          <p class="mt-3 leading-7 text-slate-300">
+            I worked with technical support and infrastructure, providing remote and in-person assistance,
+            hardware and software maintenance, system installation and troubleshooting for devices and printers.
+            This experience strengthened my foundation in user support, technical diagnosis and corporate IT routines.
+          </p>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-icon"></div>
-          <div class="timeline-content">
-            <h3>2019 - 2022</h3>
-            <h4>Bené Herzl — Apprentice</h4>
-            <p>
-              Experience in administrative roles, where I developed organization, discipline, responsibility,
-              and professional communication—skills that continue to support my performance in the workplace.
-            </p>
-          </div>
+        <div class="relative rounded-2xl bg-slate-800/60 p-6 shadow-glow transition hover:-translate-y-1">
+          <span class="absolute -left-[33px] top-8 h-4 w-4 rounded-full border-4 border-slate-950 bg-sky-400"></span>
+          <h3 class="text-lg font-bold text-sky-400">2019 - 2022</h3>
+          <h4 class="mt-1 text-xl font-semibold text-white">Bené Herzl — Apprentice</h4>
+          <p class="mt-3 leading-7 text-slate-300">
+            Experience in the administrative area, where I developed skills such as organization,
+            discipline, responsibility and professional communication, abilities that still contribute to my work in corporate environments.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="projetos" class="section-content">
-    <h2>Featured Projects</h2>
-
-    <div class="projetos-grid">
-      <div class="projeto-card">
-        <img src="imagens/projeto_portifolio.png" alt="Portfolio Project">
-        <div class="projeto-info">
-          <h3>Portfolio in React</h3>
-          <p>
-            A React project integrated with a local json-server backend.
-            It was one of my first experiences structuring components, routes, and data organization in a front-end application.
-          </p>
-          <a href="https://projeto-react-firts-htdg.vercel.app/" target="_blank" class="btn">View Project</a>
-        </div>
-      </div>
-
-      <div class="projeto-card">
-        <img src="imagens/gerenciadorProdutos.jpeg" alt="Product Management Project">
-        <div class="projeto-info">
-          <h3>Product Management</h3>
-          <p>
-            Inventory management system built with Laravel, Bootstrap, and AdminLTE,
-            focused on product registration, organization, and administrative control.
-          </p>
-          <a href="https://github.com/ArturMineiro/gerenciamento_de_produtos" target="_blank" class="btn">View Project</a>
-        </div>
-      </div>
-
-      <div class="projeto-card">
-        <img src="imagens/apisimagem.png" alt="API Consumption Project">
-        <div class="projeto-info">
-          <h3>API Consumption</h3>
-          <p>
-            Application created to practice integration with external APIs, data handling,
-            and dynamic front-end rendering, strengthening my experience with service consumption.
-          </p>
-          <a href="https://github.com/ArturMineiro/Consumodeapi" target="_blank" class="btn">View Project</a>
-        </div>
-      </div>
-
-      <div class="projeto-card">
-        <img src="imagens/gerar_carta.jpg" alt="Letter Generator Project">
-        <div class="projeto-info">
-          <h3>Letter Generator</h3>
-          <p>
-            System for client and building registration, PDF billing letter generation, and email sending.
-            The project focused on process automation and document generation for administrative workflows.
-          </p>
-          <a href="https://github.com/ArturMineiro/gerar_carta" target="_blank" class="btn">View Project</a>
-        </div>
-      </div>
-
-      <div class="projeto-card">
-        <img src="imagens/contabilidade.jpg" alt="Accounting System">
-        <div class="projeto-info">
-          <h3>Accounting System</h3>
-          <p>
-            Application designed for accounting control, including PDF report generation and Python charts
-            to support financial analysis and data visualization.
-          </p>
-          <a href="https://github.com/Davidtimbo/contabilidade" target="_blank" class="btn">View Project</a>
-        </div>
-      </div>
-
-      <div class="projeto-card">
-        <img src="imagens/ecommerce.jpeg" alt="E-commerce Project">
-        <div class="projeto-info">
-          <h3>E-commerce</h3>
-          <p>
-            Ongoing project built with Laravel on the back-end and React on the front-end,
-            designed to simulate an e-commerce platform with authentication and product management.
-          </p>
-          <a href="https://github.com/ArturMineiro/e-commerce" target="_blank" class="btn">View Project</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="meusFrameworks" class="section-content">
-    <h2>🚀 Technologies</h2>
-    <p style="text-align: center; margin-bottom: 30px; font-style: italic;">
-      Technologies I use to build interfaces, business logic, and web solutions.
+  <!-- Projects -->
+  <section id="projects" class="mx-auto max-w-7xl px-6 py-20">
+    <h2 class="mb-4 text-center text-3xl font-bold text-sky-400 md:text-4xl">
+      Featured Projects
+    </h2>
+    <p class="mx-auto mb-12 max-w-3xl text-center text-slate-400">
+      Some projects that represent my experience with web development, process automation and interface building.
     </p>
-    <div class="grid-container">
-      <div class="grid-item">
-        <i class="devicon-angularjs-plain colored"></i>
-        <p>Angular</p><p>2+ years</p>
+
+    <!-- Modal -->
+    <div id="galleryModal" class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/90">
+      <button
+        id="closeGallery"
+        class="absolute top-6 right-8 text-white text-4xl hover:text-sky-400"
+        aria-label="Close gallery"
+      >
+        &times;
+      </button>
+
+      <div class="w-[90%] max-w-5xl">
+        <div class="swiper modalSwiper">
+          <div class="swiper-wrapper" id="modalImages"></div>
+          <div class="swiper-button-next !text-white"></div>
+          <div class="swiper-button-prev !text-white"></div>
+          <div class="swiper-pagination"></div>
+        </div>
       </div>
-      <div class="grid-item">
-        <i class="devicon-laravel-plain colored"></i>
-        <p>Laravel</p><p>3+ years</p>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-3">
+
+      <!-- Project 1 -->
+      <article class="overflow-hidden rounded-2xl border border-sky-400/10 bg-slate-900 shadow-glow transition duration-300 hover:-translate-y-2 hover:shadow-glowStrong">
+        <div class="swiper projetoSwiper h-64 project-gallery">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="imagens/gerar-carta1.png" alt="Letter Generator - image 1" class="h-full w-full object-cover cursor-pointer gallery-image" />
+            </div>
+            <div class="swiper-slide">
+              <img src="imagens/gerar-carta2.png" alt="Letter Generator - image 2" class="h-full w-full object-cover cursor-pointer gallery-image" />
+            </div>
+            <div class="swiper-slide">
+              <img src="imagens/gerar-carta3.png" alt="Letter Generator - image 3" class="h-full w-full object-cover cursor-pointer gallery-image" />
+            </div>
+            <div class="swiper-slide">
+              <img src="imagens/gerar-carta4.png" alt="Letter Generator - image 4" class="h-full w-full object-cover cursor-pointer gallery-image" />
+            </div>
+            <div class="swiper-slide">
+              <img src="imagens/gerar-carta5.png" alt="Letter Generator - image 5" class="h-full w-full object-cover cursor-pointer gallery-image" />
+            </div>
+            <div class="swiper-slide">
+              <img src="imagens/gerar-carta6.png" alt="Letter Generator - image 6" class="h-full w-full object-cover cursor-pointer gallery-image" />
+            </div>
+            <div class="swiper-slide">
+              <img src="imagens/gerar-carta7.png" alt="Letter Generator - image 7" class="h-full w-full object-cover cursor-pointer gallery-image" />
+            </div>
+          </div>
+
+          <div class="swiper-button-next !text-sky-400"></div>
+          <div class="swiper-button-prev !text-sky-400"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="p-6">
+          <h3 class="mb-3 text-xl font-bold text-sky-400">Letter Generator</h3>
+          <p class="mb-5 leading-7 text-slate-300">
+            System for client and building registration, PDF billing letter generation and email sending.
+            The project involved process automation and document generation to streamline administrative routines.
+          </p>
+          <a
+            href="https://github.com/ArturMineiro/gerar_carta"
+            target="_blank"
+            class="inline-flex items-center rounded-full bg-sky-400 px-5 py-2.5 font-semibold text-slate-950 transition hover:bg-sky-500"
+          >
+            View Project
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="overflow-hidden rounded-2xl border border-sky-400/10 bg-slate-900 shadow-glow transition duration-300 hover:-translate-y-2 hover:shadow-glowStrong">
+        <div class="swiper projetoSwiper h-64 project-gallery">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="imagens/contabilidade1.png" alt="Accounting System - image 1" class="h-full w-full object-cover cursor-pointer gallery-image" />
+            </div>
+            <div class="swiper-slide">
+              <img src="imagens/contabilidade2.png" alt="Accounting System - image 2" class="h-full w-full object-cover cursor-pointer gallery-image" />
+            </div>
+            <div class="swiper-slide">
+              <img src="imagens/contabilidade3.png" alt="Accounting System - image 3" class="h-full w-full object-cover cursor-pointer gallery-image" />
+            </div>
+            <div class="swiper-slide">
+              <img src="imagens/contabilidade4.png" alt="Accounting System - image 4" class="h-full w-full object-cover cursor-pointer gallery-image" />
+            </div>
+            <div class="swiper-slide">
+              <img src="imagens/contabilidade5.png" alt="Accounting System - image 5" class="h-full w-full object-cover cursor-pointer gallery-image" />
+            </div>
+            <div class="swiper-slide">
+              <img src="imagens/contabilidade6.png" alt="Accounting System - image 6" class="h-full w-full object-cover cursor-pointer gallery-image" />
+            </div>
+            <div class="swiper-slide">
+              <img src="imagens/contabilidade7.png" alt="Accounting System - image 7" class="h-full w-full object-cover cursor-pointer gallery-image" />
+            </div>
+          </div>
+
+          <div class="swiper-button-next !text-sky-400"></div>
+          <div class="swiper-button-prev !text-sky-400"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="p-6">
+          <h3 class="mb-3 text-xl font-bold text-sky-400">Accounting System</h3>
+          <p class="mb-5 leading-7 text-slate-300">
+            Platform for managing accounting routines, focused on data organization,
+            operational productivity and support for administrative workflows.
+          </p>
+          <a
+            href="https://github.com/Davidtimbo/contabilidade"
+            target="_blank"
+            class="inline-flex items-center rounded-full bg-sky-400 px-5 py-2.5 font-semibold text-slate-950 transition hover:bg-sky-500"
+          >
+            View Project
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="overflow-hidden rounded-2xl border border-sky-400/10 bg-slate-900 shadow-glow transition duration-300 hover:-translate-y-2 hover:shadow-glowStrong">
+        <div class="swiper projetoSwiper h-64 project-gallery">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="imagens/ecommerce1.png" alt="E-commerce - image 1" class="h-full w-full object-cover cursor-pointer gallery-image" />
+            </div>
+            <div class="swiper-slide">
+              <img src="imagens/ecommerce2.png" alt="E-commerce - image 2" class="h-full w-full object-cover cursor-pointer gallery-image" />
+            </div>
+            <div class="swiper-slide">
+              <img src="imagens/ecommerce3.png" alt="E-commerce - image 3" class="h-full w-full object-cover cursor-pointer gallery-image" />
+            </div>
+          </div>
+
+          <div class="swiper-button-next !text-sky-400"></div>
+          <div class="swiper-button-prev !text-sky-400"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="p-6">
+          <h3 class="mb-3 text-xl font-bold text-sky-400">E-commerce Web</h3>
+          <p class="mb-5 leading-7 text-slate-300">
+            Web application focused on online sales, with a modern interface, product organization,
+            user registration and integration between front-end and back-end.
+          </p>
+          <a
+            href="https://github.com/ArturMineiro/e-commerce"
+            target="_blank"
+            class="inline-flex items-center rounded-full bg-sky-400 px-5 py-2.5 font-semibold text-slate-950 transition hover:bg-sky-500"
+          >
+            View Project
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Technologies -->
+  <section id="technologies" class="mx-auto max-w-6xl px-6 py-20">
+    <h2 class="mb-4 text-center text-3xl font-bold text-sky-400">🚀 Technologies</h2>
+    <p class="mb-10 text-center italic text-slate-400">
+      Technologies I use to build interfaces, business logic and web solutions.
+    </p>
+
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+      <div class="rounded-2xl bg-slate-800/70 p-6 text-center shadow-glow transition hover:-translate-y-1">
+        <i class="devicon-angularjs-plain colored text-5xl"></i>
+        <p class="mt-4 font-semibold text-white">Angular</p>
+        <p class="text-sm text-slate-400">2+ years</p>
       </div>
-      <div class="grid-item">
-        <i class="devicon-bootstrap-plain colored"></i>
-        <p>Bootstrap</p><p>2 years</p>
+
+      <div class="rounded-2xl bg-slate-800/70 p-6 text-center shadow-glow transition hover:-translate-y-1">
+        <i class="devicon-laravel-plain colored text-5xl"></i>
+        <p class="mt-4 font-semibold text-white">Laravel</p>
+        <p class="text-sm text-slate-400">3+ years</p>
       </div>
-      <div class="grid-item">
-        <i class="devicon-react-original colored"></i>
-        <p>React</p><p>2+ years</p>
+
+      <div class="rounded-2xl bg-slate-800/70 p-6 text-center shadow-glow transition hover:-translate-y-1">
+        <i class="devicon-bootstrap-plain colored text-5xl"></i>
+        <p class="mt-4 font-semibold text-white">Bootstrap</p>
+        <p class="text-sm text-slate-400">2 years</p>
       </div>
-      <div class="grid-item">
-        <i class="devicon-typescript-plain colored"></i>
-        <p>TypeScript</p><p>2+ years</p>
+
+      <div class="rounded-2xl bg-slate-800/70 p-6 text-center shadow-glow transition hover:-translate-y-1">
+        <i class="devicon-react-original colored text-5xl"></i>
+        <p class="mt-4 font-semibold text-white">React</p>
+        <p class="text-sm text-slate-400">2+ years</p>
       </div>
-      <div class="grid-item">
-        <i class="devicon-php-plain colored"></i>
-        <p>PHP</p><p>3+ years</p>
+
+      <div class="rounded-2xl bg-slate-800/70 p-6 text-center shadow-glow transition hover:-translate-y-1">
+        <i class="devicon-typescript-plain colored text-5xl"></i>
+        <p class="mt-4 font-semibold text-white">TypeScript</p>
+        <p class="text-sm text-slate-400">2+ years</p>
       </div>
-      <div class="grid-item">
-        <i class="devicon-html5-plain colored"></i>
-        <p>HTML</p><p>3+ years</p>
+
+      <div class="rounded-2xl bg-slate-800/70 p-6 text-center shadow-glow transition hover:-translate-y-1">
+        <i class="devicon-php-plain colored text-5xl"></i>
+        <p class="mt-4 font-semibold text-white">PHP</p>
+        <p class="text-sm text-slate-400">3+ years</p>
       </div>
-      <div class="grid-item">
-        <i class="devicon-css3-plain colored"></i>
-        <p>CSS</p><p>3+ years</p>
+
+      <div class="rounded-2xl bg-slate-800/70 p-6 text-center shadow-glow transition hover:-translate-y-1">
+        <i class="devicon-html5-plain colored text-5xl"></i>
+        <p class="mt-4 font-semibold text-white">HTML</p>
+        <p class="text-sm text-slate-400">3+ years</p>
       </div>
-      <div class="grid-item">
-        <i class="devicon-mysql-plain colored"></i>
-        <p>MySQL</p><p>3+ years</p>
+
+      <div class="rounded-2xl bg-slate-800/70 p-6 text-center shadow-glow transition hover:-translate-y-1">
+        <i class="devicon-css3-plain colored text-5xl"></i>
+        <p class="mt-4 font-semibold text-white">CSS</p>
+        <p class="text-sm text-slate-400">3+ years</p>
+      </div>
+
+      <div class="rounded-2xl bg-slate-800/70 p-6 text-center shadow-glow transition hover:-translate-y-1">
+        <i class="devicon-mysql-plain colored text-5xl"></i>
+        <p class="mt-4 font-semibold text-white">MySQL</p>
+        <p class="text-sm text-slate-400">3+ years</p>
+      </div>
+
+      <div class="rounded-2xl bg-slate-800/70 p-6 text-center shadow-glow transition hover:-translate-y-1">
+        <i class="devicon-postgresql-plain colored text-5xl"></i>
+        <p class="mt-4 font-semibold text-white">PostgreSQL</p>
+        <p class="text-sm text-slate-400">3+ years</p>
       </div>
     </div>
   </section>
 
-  <div class="curriculo-download-wrapper">
-    <a href="arquivos/curriculo_artur.pdf" download class="btn-download-cv">
-      <span class="icon"><i class="fas fa-file-alt"></i></span>
-      <span class="text">Download Resume</span>
-      <span class="emoji">📄</span>
+  <!-- Resume -->
+  <div class="flex justify-center px-6 py-4">
+    <a
+      href="arquivos/curriculo_artur.pdf"
+      download
+      class="inline-flex items-center gap-3 rounded-full bg-sky-400 px-6 py-3 font-semibold text-slate-950 shadow-glow transition hover:scale-105 hover:bg-sky-500"
+    >
+      <span><i class="fas fa-file-alt"></i></span>
+      <span>Download Resume</span>
+      <span>📄</span>
     </a>
   </div>
 
-  <section id="contato" class="section-content">
-    <h2 class="contact">📬 Contact</h2>
-    <p style="text-align: center; font-size: 18px;">
-      I’m open to opportunities, professional connections, and conversations about technology, web development, and new projects.
+  <!-- Contact -->
+  <section id="contact" class="mx-auto max-w-4xl px-6 py-20 text-center">
+    <h2 class="mb-6 text-3xl font-bold text-sky-400">📬 Contact</h2>
+
+    <p class="text-lg leading-8 text-slate-300">
+      I’m open to opportunities, professional connections and conversations about technology, web development and new projects.
     </p>
-    <p style="text-align: center; margin-top: 10px; font-size: 18px;">
-      📧 <a href="mailto:arturmineiro2@hotmail.com" style="color: #fff; text-decoration: underline;">arturmineiro2@hotmail.com</a>
+
+    <p class="mt-4 text-lg text-slate-300">
+      📧
+      <a
+        href="mailto:arturmineiro2@hotmail.com"
+        class="underline decoration-sky-400 underline-offset-4 hover:text-sky-400"
+      >
+        arturmineiro2@hotmail.com
+      </a>
     </p>
-    <div class="social-links" style="text-align: center; margin-top: 20px;">
-      <a href="https://linkedin.com/in/artur-mineiro-2871b021a" target="_blank" aria-label="LinkedIn" class="social-icon linkedin">
+
+    <div class="mt-8 flex justify-center gap-6 text-3xl">
+      <a
+        href="https://linkedin.com/in/artur-mineiro-2871b021a"
+        target="_blank"
+        aria-label="LinkedIn"
+        class="text-sky-400 transition hover:-translate-y-1 hover:text-sky-300"
+      >
         <i class="fab fa-linkedin"></i>
       </a>
-      <a href="https://github.com/ArturMineiro" target="_blank" aria-label="GitHub" class="social-icon github">
+
+      <a
+        href="https://github.com/ArturMineiro"
+        target="_blank"
+        aria-label="GitHub"
+        class="text-sky-400 transition hover:-translate-y-1 hover:text-sky-300"
+      >
         <i class="fab fa-github"></i>
       </a>
-      <a href="https://www.instagram.com/artur_mineiro" target="_blank" aria-label="Instagram" class="social-icon instagram">
+
+      <a
+        href="https://www.instagram.com/artur_mineiro"
+        target="_blank"
+        aria-label="Instagram"
+        class="text-sky-400 transition hover:-translate-y-1 hover:text-sky-300"
+      >
         <i class="fab fa-instagram"></i>
       </a>
     </div>
   </section>
 
-  <script src="meuPortifólio.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    const menuToggleBtn = document.getElementById("menuToggleBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileLinks = document.querySelectorAll(".mobile-link");
+
+    menuToggleBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.remove("hidden");
+      } else {
+        scrollTopBtn.classList.add("hidden");
+      }
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    document.querySelectorAll(".projetoSwiper").forEach((swiperEl) => {
+      new Swiper(swiperEl, {
+        loop: true,
+        spaceBetween: 10,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: swiperEl.querySelector(".swiper-pagination"),
+          clickable: true,
+        },
+        navigation: {
+          nextEl: swiperEl.querySelector(".swiper-button-next"),
+          prevEl: swiperEl.querySelector(".swiper-button-prev"),
+        },
+      });
+    });
+
+    const modal = document.getElementById("galleryModal");
+    const modalImages = document.getElementById("modalImages");
+    const closeGallery = document.getElementById("closeGallery");
+
+    let modalSwiper;
+
+    document.querySelectorAll(".project-gallery").forEach((gallery) => {
+      gallery.querySelectorAll(".gallery-image").forEach((img, index) => {
+        img.addEventListener("click", () => {
+          modalImages.innerHTML = "";
+
+          const images = gallery.querySelectorAll(".gallery-image");
+
+          images.forEach((image) => {
+            const slide = document.createElement("div");
+            slide.className = "swiper-slide flex justify-center";
+
+            slide.innerHTML = `
+              <img src="${image.src}" class="max-h-[80vh] object-contain">
+            `;
+
+            modalImages.appendChild(slide);
+          });
+
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+
+          if (modalSwiper) {
+            modalSwiper.destroy(true, true);
+          }
+
+          modalSwiper = new Swiper(".modalSwiper", {
+            initialSlide: index,
+            navigation: {
+              nextEl: "#galleryModal .swiper-button-next",
+              prevEl: "#galleryModal .swiper-button-prev",
+            },
+            pagination: {
+              el: "#galleryModal .swiper-pagination",
+              clickable: true,
+            },
+          });
+        });
+      });
+    });
+
+    closeGallery.addEventListener("click", () => {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    });
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
+    });
+  </script>
 </body>
 </html>
