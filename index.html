@@ -1,277 +1,632 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Artur Mineiro">
-    <title>Portfólio - Artur Mineiro</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="imagens/favicon.png" type="image/png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Portfólio de Artur Mineiro, desenvolvedor web com experiência em Laravel, Angular, React, PHP, TypeScript e PostgreSQL."
+  />
+  <title>Portfólio - Artur Mineiro</title>
+  <link rel="icon" href="imagens/favicon.png" type="image/png" />
 
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+
+  <!-- Devicons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+  />
+
+  <!-- Swiper -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#38bdf8",
+            primaryDark: "#0ea5e9",
+            darkBg: "#0f172a",
+            darkCard: "#1e293b",
+          },
+          boxShadow: {
+            glow: "0 0 25px rgba(56, 189, 248, 0.25)",
+            glowStrong: "0 0 35px rgba(56, 189, 248, 0.4)",
+          },
+        },
+      },
+    };
+  </script>
 </head>
-<body>
-    <header class="site-header">
-        <nav class="navbar">
-          <button id="menuToggleBtn" class="menu-toggle-btn">☰ Menu</button>
-          <ul id="nav-list" class="nav-list">
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#formacao">Educação e experiência</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#meusFrameworks">Frameworks & Linguagens</a></li>
-            <li><a href="#contato">Contato</a></li>
-            <li><a href="index-en.html" class="language-switch">�🇸 English</a></li>  
-          </ul>
-        </nav>
-      </header>
-      
+<body class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-100 font-sans">
 
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <a href="#sobre" class="text-lg font-bold text-sky-400">
+        Artur Mineiro
+      </a>
 
+      <button
+        id="menuToggleBtn"
+        class="md:hidden text-sky-400 text-2xl"
+        aria-label="Abrir menu"
+      >
+        ☰
+      </button>
 
-    <button id="scrollTopBtn" class="scroll-top-btn">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    
-    <!-- Seção de Sobre com a imagem ao lado -->
-    <section id="sobre" class="section-content">
-        <div class="about-container">
-            <img src="imagens/artur.jpeg" alt="Foto de Artur Mineiro" class="profile-pic">
-            <div class="about-text">
-     <h1 class="contact">👋 E aí,tudo bem? Eu sou o Artur!</h1>
-<p>
-Sou apaixonado por resolver problemas com código — e transformar ideias em soluções reais! 💡<br><br>
-Atualmente trabalho com desenvolvimento web usando <strong>Angular</strong> e <strong>Laravel</strong>, onde implemento interfaces, crio APIs e cuido do backend com <strong>PostgreSQL</strong>. Também manuseio servidores via <strong>FileZilla</strong> — sempre buscando aprender mais a cada push no Git. 🚀<br><br>
-Este é meu portfólio, e ele está em constante evolução (assim como eu). Vamos explorar juntos?
-</p>
+      <ul
+        id="nav-list"
+        class="hidden md:flex items-center gap-6 text-sm font-medium"
+      >
+        <li><a href="#sobre" class="transition hover:text-sky-400">Sobre</a></li>
+        <li><a href="#formacao" class="transition hover:text-sky-400">Educação</a></li>
+        <li><a href="#experiencia" class="transition hover:text-sky-400">Experiência</a></li>
+        <li><a href="#projetos" class="transition hover:text-sky-400">Projetos</a></li>
+        <li><a href="#meusFrameworks" class="transition hover:text-sky-400">Tecnologias</a></li>
+        <li><a href="#contato" class="transition hover:text-sky-400">Contato</a></li>
+        <li>
+          <a href="index-en.html" class="rounded-full border border-sky-400/40 px-4 py-2 text-sky-300 transition hover:bg-sky-400 hover:text-slate-950">
+            🇺🇸 English
+          </a>
+        </li>
+      </ul>
+    </nav>
 
-        </div>
-    </section>
+    <!-- Menu Mobile -->
+    <div
+      id="mobileMenu"
+      class="hidden border-t border-white/10 bg-slate-950/95 px-6 py-4 md:hidden"
+    >
+      <ul class="flex flex-col gap-4 text-sm font-medium">
+        <li><a href="#sobre" class="mobile-link transition hover:text-sky-400">Sobre</a></li>
+        <li><a href="#formacao" class="mobile-link transition hover:text-sky-400">Educação</a></li>
+        <li><a href="#experiencia" class="mobile-link transition hover:text-sky-400">Experiência</a></li>
+        <li><a href="#projetos" class="mobile-link transition hover:text-sky-400">Projetos</a></li>
+        <li><a href="#meusFrameworks" class="mobile-link transition hover:text-sky-400">Tecnologias</a></li>
+        <li><a href="#contato" class="mobile-link transition hover:text-sky-400">Contato</a></li>
+        <li>
+          <a href="index-en.html" class="mobile-link inline-block rounded-full border border-sky-400/40 px-4 py-2 text-sky-300 transition hover:bg-sky-400 hover:text-slate-950">
+            🇺🇸 English
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
 
-    <!-- Seção com Formação e Experiência lado a lado -->
-    <section class="main-content">
-        <div id="formacao" class="section-content side-left">
-          <h2>🎓 Formação</h2>
-          <p style="text-align: center; font-style: italic; margin-bottom: 30px;">
-            "Aprender é meu combustível diário."
+  <!-- Botão topo -->
+  <button
+    id="scrollTopBtn"
+    class="fixed bottom-6 right-6 z-50 hidden h-12 w-12 rounded-full bg-sky-400 text-slate-950 shadow-lg transition hover:scale-110 hover:bg-sky-500"
+    aria-label="Voltar ao topo"
+  >
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Sobre -->
+  <section id="sobre" class="mx-auto max-w-6xl px-6 py-20">
+    <div class="grid items-center gap-10 md:grid-cols-[240px_1fr]">
+      <div class="flex justify-center">
+        <img
+          src="imagens/artur.jpeg"
+          alt="Foto de Artur Mineiro"
+          class="h-56 w-56 rounded-full border-4 border-sky-400 object-cover shadow-glow transition duration-300 hover:scale-105"
+        />
+      </div>
+
+      <div>
+        <h1 class="mb-6 text-3xl font-bold text-sky-400 md:text-5xl">
+          Olá, eu sou Artur Mineiro 👋
+        </h1>
+
+        <p class="text-base leading-8 text-slate-300 md:text-lg">
+          Sou desenvolvedor web com experiência no desenvolvimento de aplicações e soluções voltadas para negócios, atuando tanto no front-end quanto no back-end.
+          Trabalho principalmente com <strong class="text-white">Angular</strong>, <strong class="text-white">Laravel</strong>, <strong class="text-white">PHP</strong>, <strong class="text-white">TypeScript</strong> e <strong class="text-white">PostgreSQL</strong>, participando da criação de interfaces, desenvolvimento de APIs, manutenção de sistemas e implementação de novas funcionalidades.
+          <br /><br />
+          Tenho interesse em construir soluções que sejam não apenas funcionais, mas também escaláveis, organizadas e alinhadas às necessidades reais dos usuários e das empresas.
+          Este portfólio reúne parte da minha trajetória, experiências e projetos que representam minha evolução como profissional de tecnologia.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formação + Experiência -->
+  <section class="mx-auto grid max-w-6xl gap-12 px-6 py-8 lg:grid-cols-2">
+
+    <!-- Formação -->
+    <div id="formacao">
+      <h2 class="mb-4 text-3xl font-bold text-sky-400">🎓 Formação</h2>
+      <p class="mb-8 text-center italic text-slate-400">
+        "Aprendizado contínuo é a base da minha evolução profissional."
+      </p>
+
+      <div class="relative border-l-2 border-sky-400 pl-6 space-y-8">
+        <div class="relative rounded-2xl bg-slate-800/60 p-6 shadow-glow transition hover:-translate-y-1">
+          <span class="absolute -left-[33px] top-8 h-4 w-4 rounded-full border-4 border-slate-950 bg-sky-400"></span>
+          <h3 class="text-lg font-bold text-sky-400">2023 - 2025</h3>
+          <h4 class="mt-1 text-xl font-semibold text-white">Universidade Veiga de Almeida (UVA)</h4>
+          <p class="mt-3 leading-7 text-slate-300">
+            Graduação em Análise e Desenvolvimento de Sistemas, com foco em desenvolvimento de software,
+            banco de dados, arquitetura de sistemas e construção de soluções modernas voltadas à performance e escalabilidade.
           </p>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-icon"></div>
-              <div class="timeline-content">
-                <h3>2023 - 2025</h3>
-                <h4>Faculdade Veiga de Almeida (UVA)</h4>
-                <p>Curso superior em Análise e Desenvolvimento de Sistemas. Aprofundo meus conhecimentos em engenharia de software, bancos de dados e desenvolvimento de soluções modernas com foco em alta performance e escalabilidade.</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-icon"></div>
-              <div class="timeline-content">
-                <h3>2021 - 2023</h3>
-                <h4>Instituto Santo Inácio</h4>
-                <p>Curso Técnico em Programação. Tive contato direto com lógica de programação, estruturação de sistemas e construção de aplicações web desde a base, incluindo HTML, CSS e introdução a frameworks modernos.</p>
-              </div>
-            </div>
-          </div>
         </div>
-      
-        <div id="experiencia" class="section-content side-right">
-          <h2>💼 Experiência Profissional</h2>
-          <p style="text-align: center; font-style: italic; margin-bottom: 30px;">
-            "Cada desafio profissional molda minha trajetória como desenvolvedor."
-          </p>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-icon"></div>
-              <div class="timeline-content">
-                <h3>2023 - Atual</h3>
-                <h4>Crase Sigma — Desenvolvedor Web</h4>
-                <p>Atuo como desenvolvedor full-stack em um sistema legado em PHP, utilizando Laravel no backend e Angular no frontend. Trabalho na implementação de novas funcionalidades, correção de bugs e otimização de desempenho. Utilizo PostgreSQL como banco de dados e contribuo diretamente com soluções que aumentam a eficiência e escalabilidade dos processos internos. Um dos destaques foi o desenvolvimento da funcionalidade de locação de imóveis, que solucionou um problema recorrente na plataforma da empresa.</p>
-              </div>
-            </div>
-      
-            <div class="timeline-item">
-              <div class="timeline-icon"></div>
-              <div class="timeline-content">
-                <h3>2022 - 2023</h3>
-                <h4>Atlanticont LTDA — Estagiário de Informática</h4>
-                <p>Atuei com suporte técnico e infraestrutura, realizando atendimento remoto e presencial a clientes. Fui responsável pela manutenção de hardware e software, resolução de problemas com impressoras e instalação de sistemas, o que ampliou minha visão sobre ambientes corporativos e atendimento ao usuário.</p>
-              </div>
-            </div>
-      
-            <div class="timeline-item">
-              <div class="timeline-icon"></div>
-              <div class="timeline-content">
-                <h3>2019 - 2022</h3>
-                <h4>Bené Herzl — Jovem Aprendiz</h4>
-                <p>Experiência na área administrativa, onde desenvolvi organização, responsabilidade e disciplina profissional — habilidades que contribuíram para meu desenvolvimento pessoal e minha comunicação em ambiente de trabalho.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
 
-    <!-- Seção de Projetos com Carrossel no centro -->
- <!-- Seção de Projetos -->
-<section id="projetos" class="section-content">
-    <h2>Veja alguns de meus projetos:</h2>
-  
-    <div class="projetos-grid">
+        <div class="relative rounded-2xl bg-slate-800/60 p-6 shadow-glow transition hover:-translate-y-1">
+          <span class="absolute -left-[33px] top-8 h-4 w-4 rounded-full border-4 border-slate-950 bg-sky-400"></span>
+          <h3 class="text-lg font-bold text-sky-400">2021 - 2023</h3>
+          <h4 class="mt-1 text-xl font-semibold text-white">Instituto Santo Inácio</h4>
+          <p class="mt-3 leading-7 text-slate-300">
+            Formação técnica em Programação, com base sólida em lógica de programação,
+            estruturação de sistemas e desenvolvimento de aplicações web utilizando HTML, CSS, JavaScript e fundamentos de frameworks modernos.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Experiência -->
+    <div id="experiencia">
+      <h2 class="mb-4 text-3xl font-bold text-sky-400">💼 Experiência Profissional</h2>
+      <p class="mb-8 text-center italic text-slate-400">
+        "Cada experiência contribui para ampliar minha visão técnica e capacidade de entrega."
+      </p>
+
+      <div class="relative border-l-2 border-sky-400 pl-6 space-y-8">
+        <div class="relative rounded-2xl bg-slate-800/60 p-6 shadow-glow transition hover:-translate-y-1">
+          <span class="absolute -left-[33px] top-8 h-4 w-4 rounded-full border-4 border-slate-950 bg-sky-400"></span>
+          <h3 class="text-lg font-bold text-sky-400">2023 - Atual</h3>
+          <h4 class="mt-1 text-xl font-semibold text-white">Crase Sigma — Desenvolvedor Web</h4>
+          <p class="mt-3 leading-7 text-slate-300">
+            Atuo no desenvolvimento e manutenção de sistemas web, trabalhando com <strong class="text-white">Laravel</strong> no back-end e <strong class="text-white">Angular</strong> no front-end.
+            Participo da implementação de novas funcionalidades, correção de bugs, integração entre camadas da aplicação e otimização de processos internos.
+            Também utilizo <strong class="text-white">PostgreSQL</strong> no gerenciamento de dados e contribuo com melhorias voltadas à eficiência, estabilidade e escalabilidade da plataforma.
+            Entre as entregas relevantes, destaco o desenvolvimento de uma funcionalidade de locação de imóveis, criada para resolver uma necessidade recorrente do sistema.
+          </p>
+        </div>
+
+        <div class="relative rounded-2xl bg-slate-800/60 p-6 shadow-glow transition hover:-translate-y-1">
+          <span class="absolute -left-[33px] top-8 h-4 w-4 rounded-full border-4 border-slate-950 bg-sky-400"></span>
+          <h3 class="text-lg font-bold text-sky-400">2022 - 2023</h3>
+          <h4 class="mt-1 text-xl font-semibold text-white">Atlanticont LTDA — Estagiário de Informática</h4>
+          <p class="mt-3 leading-7 text-slate-300">
+            Atuei com suporte técnico e infraestrutura, realizando atendimento remoto e presencial,
+            manutenção de hardware e software, instalação de sistemas e resolução de problemas em equipamentos e impressoras.
+            Essa experiência fortaleceu minha base em suporte ao usuário, diagnóstico técnico e rotina corporativa de TI.
+          </p>
+        </div>
+
+        <div class="relative rounded-2xl bg-slate-800/60 p-6 shadow-glow transition hover:-translate-y-1">
+          <span class="absolute -left-[33px] top-8 h-4 w-4 rounded-full border-4 border-slate-950 bg-sky-400"></span>
+          <h3 class="text-lg font-bold text-sky-400">2019 - 2022</h3>
+          <h4 class="mt-1 text-xl font-semibold text-white">Bené Herzl — Jovem Aprendiz</h4>
+          <p class="mt-3 leading-7 text-slate-300">
+            Experiência na área administrativa, com desenvolvimento de habilidades como organização,
+            disciplina, responsabilidade e comunicação profissional, competências que seguem contribuindo para minha atuação no ambiente corporativo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projetos -->
+  <section id="projetos" class="mx-auto max-w-7xl px-6 py-20">
+    <h2 class="mb-4 text-center text-3xl font-bold text-sky-400 md:text-4xl">
+      Projetos em destaque
+    </h2>
+    <p class="mx-auto mb-12 max-w-3xl text-center text-slate-400">
+      Alguns projetos que representam minha experiência com desenvolvimento web, automação de processos e construção de interfaces.
+    </p>
+<div id="galleryModal" class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/90">
+
+  <!-- botão fechar -->
+  <button
+    id="closeGallery"
+    class="absolute top-6 right-8 text-white text-4xl hover:text-sky-400"
+  >
+    &times;
+  </button>
+
+  <div class="w-[90%] max-w-5xl">
+
+    <div class="swiper modalSwiper">
+
+      <div class="swiper-wrapper" id="modalImages"></div>
+
+      <div class="swiper-button-next !text-white"></div>
+      <div class="swiper-button-prev !text-white"></div>
+
+      <div class="swiper-pagination"></div>
+
+    </div>
+
+  </div>
+
+</div>
+    <div class="grid gap-8 lg:grid-cols-3">
+
       <!-- Projeto 1 -->
-      <div class="projeto-card">
-        <img src="imagens/projeto_portifolio.png" alt="Projeto Portfólio">
-        <div class="projeto-info">
-          <h3>Portfólio em React</h3>
-          <p>Primeiro projeto utilizando React com json-server como backend local para gerenciar projetos.</p>
-          <a href="https://projeto-react-firts-htdg.vercel.app/" target="_blank" class="btn">Ver Projeto</a>
+      <article class="overflow-hidden rounded-2xl border border-sky-400/10 bg-slate-900 shadow-glow transition duration-300 hover:-translate-y-2 hover:shadow-glowStrong">
+<div class="swiper projetoSwiper h-64 project-gallery">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide">
+            <img
+              src="imagens/gerar-carta1.png"
+              class="h-full w-full object-cover cursor-pointer gallery-image"
+            />            </div>
+            <div class="swiper-slide">
+              <img src="imagens/gerar-carta2.png" alt="Projeto Geração de Cartas - imagem 2" class="h-full w-full object-cover cursor-pointer gallery-image" />
+            </div>
+            <div class="swiper-slide">
+              <img src="imagens/gerar-carta3.png" alt="Projeto Geração de Cartas - imagem 3" class="h-full w-full object-cover cursor-pointer gallery-image" />
+            </div>
+            <div class="swiper-slide">
+              <img src="imagens/gerar-carta4.png" alt="Projeto Geração de Cartas - imagem 4" class="h-full w-full object-cover cursor-pointer gallery-image" />
+            </div>
+            <div class="swiper-slide">
+              <img src="imagens/gerar-carta5.png" alt="Projeto Geração de Cartas - imagem 5" class="h-full w-full object-cover cursor-pointer gallery-image" />
+            </div>
+            <div class="swiper-slide">
+              <img src="imagens/gerar-carta6.png" alt="Projeto Geração de Cartas - imagem 6" class="h-full w-full object-cover cursor-pointer gallery-image" />
+            </div>
+            <div class="swiper-slide">
+              <img src="imagens/gerar-carta7.png" alt="Projeto Geração de Cartas - imagem 7" class="h-full w-full object-cover cursor-pointer gallery-image" />
+            </div>
+          </div>
+
+          <div class="swiper-button-next !text-sky-400"></div>
+          <div class="swiper-button-prev !text-sky-400"></div>
+          <div class="swiper-pagination"></div>
         </div>
-      </div>
-  
+
+        <div class="p-6">
+          <h3 class="mb-3 text-xl font-bold text-sky-400">Geração de Cartas</h3>
+          <p class="mb-5 leading-7 text-slate-300">
+            Sistema para cadastro de clientes e edifícios, geração de cartas de cobrança em PDF e envio por e-mail.
+            O projeto envolveu automação de processos e geração de documentos para facilitar rotinas administrativas.
+          </p>
+          <a
+            href="https://github.com/ArturMineiro/gerar_carta"
+            target="_blank"
+            class="inline-flex items-center rounded-full bg-sky-400 px-5 py-2.5 font-semibold text-slate-950 transition hover:bg-sky-500"
+          >
+            Ver Projeto
+          </a>
+        </div>
+      </article>
+
       <!-- Projeto 2 -->
-      <div class="projeto-card">
-        <img src="imagens/gerenciadorProdutos.jpeg" alt="Gerenciador de Produtos">
-        <div class="projeto-info">
-          <h3>Gerenciador de Produtos</h3>
-          <p>Software para controle de estoque feito em Laravel, Bootstrap e AdminLTE.</p>
-          <a href="https://github.com/ArturMineiro/gerenciamento_de_produtos" target="_blank" class="btn">Ver Projeto</a>
+      <article class="overflow-hidden rounded-2xl border border-sky-400/10 bg-slate-900 shadow-glow transition duration-300 hover:-translate-y-2 hover:shadow-glowStrong">
+        <div class="swiper projetoSwiper h-64">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="imagens/contabilidade1.jpg" alt="Sistema de Contabilidade - imagem 1" class="h-full w-full object-cover" />
+            </div>
+            <div class="swiper-slide">
+              <img src="imagens/contabilidade2.jpg" alt="Sistema de Contabilidade - imagem 2" class="h-full w-full object-cover" />
+            </div>
+            <div class="swiper-slide">
+              <img src="imagens/contabilidade3.jpg" alt="Sistema de Contabilidade - imagem 3" class="h-full w-full object-cover" />
+            </div>
+          </div>
+
+          <div class="swiper-button-next !text-sky-400"></div>
+          <div class="swiper-button-prev !text-sky-400"></div>
+          <div class="swiper-pagination"></div>
         </div>
-      </div>
-  
+
+        <div class="p-6">
+          <h3 class="mb-3 text-xl font-bold text-sky-400">Sistema de Contabilidade</h3>
+          <p class="mb-5 leading-7 text-slate-300">
+            Plataforma para gerenciamento de rotinas contábeis, com foco em organização de dados,
+            produtividade operacional e suporte ao fluxo administrativo.
+          </p>
+          <a
+            href="#"
+            target="_blank"
+            class="inline-flex items-center rounded-full bg-sky-400 px-5 py-2.5 font-semibold text-slate-950 transition hover:bg-sky-500"
+          >
+            Ver Projeto
+          </a>
+        </div>
+      </article>
+
       <!-- Projeto 3 -->
-      <div class="projeto-card">
-        <img src="imagens/apisimagem.png" alt="Consumo de APIs">
-        <div class="projeto-info">
-          <h3>Consumo de APIs</h3>
-          <p>Aplicação para treinar consumo de APIs externas e ampliar conhecimentos em integrações.</p>
-          <a href="https://github.com/ArturMineiro/Consumodeapi" target="_blank" class="btn">Ver Projeto</a>
+      <article class="overflow-hidden rounded-2xl border border-sky-400/10 bg-slate-900 shadow-glow transition duration-300 hover:-translate-y-2 hover:shadow-glowStrong">
+        <div class="swiper projetoSwiper h-64">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="imagens/ecommerce1.jpg" alt="E-commerce - imagem 1" class="h-full w-full object-cover" />
+            </div>
+            <div class="swiper-slide">
+              <img src="imagens/ecommerce2.jpg" alt="E-commerce - imagem 2" class="h-full w-full object-cover" />
+            </div>
+            <div class="swiper-slide">
+              <img src="imagens/ecommerce3.jpg" alt="E-commerce - imagem 3" class="h-full w-full object-cover" />
+            </div>
+          </div>
+
+          <div class="swiper-button-next !text-sky-400"></div>
+          <div class="swiper-button-prev !text-sky-400"></div>
+          <div class="swiper-pagination"></div>
         </div>
-      </div>
-  
-      <!-- Projeto 4 -->
-      <div class="projeto-card">
-        <img src="imagens/gerar_carta.jpg" alt="Geração de Carta e Cobrança">
-        <div class="projeto-info">
-          <h3>Geração de Cartas</h3>
-          <p>Sistema que cadastra clientes e prédios, gera cartas de cobrança em PDF e envia por e-mail.</p>
-          <a href="https://github.com/ArturMineiro/gerar_carta" target="_blank" class="btn">Ver Projeto</a>
+
+        <div class="p-6">
+          <h3 class="mb-3 text-xl font-bold text-sky-400">E-commerce Web</h3>
+          <p class="mb-5 leading-7 text-slate-300">
+            Aplicação web voltada para vendas online, com interface moderna, organização de produtos,
+            cadastro de usuários e integração entre front-end e back-end.
+          </p>
+          <a
+            href="#"
+            target="_blank"
+            class="inline-flex items-center rounded-full bg-sky-400 px-5 py-2.5 font-semibold text-slate-950 transition hover:bg-sky-500"
+          >
+            Ver Projeto
+          </a>
         </div>
-      </div>
-  
-      <!-- Projeto 5 -->
-      <div class="projeto-card">
-        <img src="imagens/contabilidade.jpg" alt="Sistema de Contabilidade">
-        <div class="projeto-info">
-          <h3>Contabilidade com Gráficos</h3>
-          <p>Sistema de contabilidade com relatórios em PDF e gráficos em Python para análise financeira.</p>
-          <a href="https://github.com/Davidtimbo/contabilidade" target="_blank" class="btn">Ver Projeto</a>
-        </div>
-      </div>
-  
-      <!-- Projeto 6 -->
-      <div class="projeto-card">
-        <img src="imagens/ecommerce.jpeg" alt="E-commerce Laravel + React">
-        <div class="projeto-info">
-          <h3>E-commerce</h3>
-          <p>Projeto de e-commerce em desenvolvimento, feito em Laravel integrado com React no front-end.</p>
-          <a href="https://github.com/ArturMineiro/e-commerce" target="_blank" class="btn">Ver Projeto</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-    
-  <section id="meusFrameworks" class="section-content">
-    <h2>🚀 Meus Frameworks e Linguagens</h2>
-    <p style="text-align:center; margin-bottom: 30px; font-style: italic;">
-      Essas são as ferramentas que me acompanham na missão de codar o futuro!
-    </p>
-    <div class="grid-container">
-      <!-- Frameworks -->
-      <div class="grid-item">
-        <i class="devicon-angularjs-plain colored"></i>
-        <p>Angular</p>
-        <p>2 ano+</p>
-      </div>
-      <div class="grid-item">
-        <i class="devicon-laravel-plain colored"></i>
-        <p>Laravel</p>
-        <p>3 ano+</p>
-      </div>
-      <div class="grid-item">
-        <i class="devicon-bootstrap-plain colored"></i>
-        <p>Bootstrap</p>
-        <p>2 anos</p>
-      </div>
-      <div class="grid-item">
-        <i class="devicon-react-original colored"></i>
-        <p>React</p>
-        <p>2 ano+</p>
-      </div>
-  
-      <!-- Linguagens -->
-      <div class="grid-item">
-        <i class="devicon-typescript-plain colored"></i>
-        <p>TypeScript</p>
-        <p>2 ano+</p>
-      </div>
-      <div class="grid-item">
-        <i class="devicon-php-plain colored"></i>
-        <p>PHP</p>
-        <p>3 ano+</p>
-      </div>
-      <div class="grid-item">
-        <i class="devicon-html5-plain colored"></i>
-        <p>HTML</p>
-        <p>3 ano+</p>
-      </div>
-      <div class="grid-item">
-        <i class="devicon-css3-plain colored"></i>
-        <p>CSS</p>
-        <p>3 ano+</p>
-      </div>
-      <div class="grid-item">
-        <i class="devicon-mysql-plain colored"></i>
-        <p>MySQL</p>
-        <p>3 ano+</p>
-      </div>
+      </article>
     </div>
   </section>
 
-    <div class="curriculo-download-wrapper">
-        <a href="arquivos/curriculo_artur.pdf" download class="btn-download-cv">
-          <span class="icon"><i class="fas fa-file-alt"></i></span>
-          <span class="text">Clique aqui para baixar meu currículo</span>
-          <span class="emoji">📄</span>
-        </a>
+  <!-- Tecnologias -->
+  <section id="meusFrameworks" class="mx-auto max-w-6xl px-6 py-20">
+    <h2 class="mb-4 text-center text-3xl font-bold text-sky-400">🚀 Tecnologias</h2>
+    <p class="mb-10 text-center italic text-slate-400">
+      Tecnologias com as quais construo interfaces, regras de negócio e soluções web.
+    </p>
+
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+      <div class="rounded-2xl bg-slate-800/70 p-6 text-center shadow-glow transition hover:-translate-y-1">
+        <i class="devicon-angularjs-plain colored text-5xl"></i>
+        <p class="mt-4 font-semibold text-white">Angular</p>
+        <p class="text-sm text-slate-400">2+ anos</p>
       </div>
-      
-      
-<section id="contato" class="section-content">
-    <h2 class="contact">📬 Vamos conversar?</h2>
-    <p style="text-align: center; font-size: 18px;">
-        Ficou interessado(a) no meu trabalho ou quer bater um papo sobre projetos?
-        Me mande um e-mail ou conecte comigo nas redes abaixo! 😄
-    </p>
-    <p style="text-align: center; margin-top: 10px; font-size: 18px;">
-        📧 <a href="mailto:arturmineiro2@hotmail.com" style="color: #fff; text-decoration: underline;">arturmineiro2@hotmail.com</a>
-    </p>
 
-    <div class="social-links" style="text-align: center; margin-top: 20px;">
-        <a href="https://linkedin.com/in/artur-mineiro-2871b021a" target="_blank" aria-label="LinkedIn" class="social-icon linkedin">
-            <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/ArturMineiro" target="_blank" aria-label="GitHub" class="social-icon github">
-            <i class="fab fa-github"></i>
-        </a>
-        <a href="https://www.instagram.com/artur_mineiro" target="_blank" aria-label="Instagram" class="social-icon instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
+      <div class="rounded-2xl bg-slate-800/70 p-6 text-center shadow-glow transition hover:-translate-y-1">
+        <i class="devicon-laravel-plain colored text-5xl"></i>
+        <p class="mt-4 font-semibold text-white">Laravel</p>
+        <p class="text-sm text-slate-400">3+ anos</p>
+      </div>
+
+      <div class="rounded-2xl bg-slate-800/70 p-6 text-center shadow-glow transition hover:-translate-y-1">
+        <i class="devicon-bootstrap-plain colored text-5xl"></i>
+        <p class="mt-4 font-semibold text-white">Bootstrap</p>
+        <p class="text-sm text-slate-400">2 anos</p>
+      </div>
+
+      <div class="rounded-2xl bg-slate-800/70 p-6 text-center shadow-glow transition hover:-translate-y-1">
+        <i class="devicon-react-original colored text-5xl"></i>
+        <p class="mt-4 font-semibold text-white">React</p>
+        <p class="text-sm text-slate-400">2+ anos</p>
+      </div>
+
+      <div class="rounded-2xl bg-slate-800/70 p-6 text-center shadow-glow transition hover:-translate-y-1">
+        <i class="devicon-typescript-plain colored text-5xl"></i>
+        <p class="mt-4 font-semibold text-white">TypeScript</p>
+        <p class="text-sm text-slate-400">2+ anos</p>
+      </div>
+
+      <div class="rounded-2xl bg-slate-800/70 p-6 text-center shadow-glow transition hover:-translate-y-1">
+        <i class="devicon-php-plain colored text-5xl"></i>
+        <p class="mt-4 font-semibold text-white">PHP</p>
+        <p class="text-sm text-slate-400">3+ anos</p>
+      </div>
+
+      <div class="rounded-2xl bg-slate-800/70 p-6 text-center shadow-glow transition hover:-translate-y-1">
+        <i class="devicon-html5-plain colored text-5xl"></i>
+        <p class="mt-4 font-semibold text-white">HTML</p>
+        <p class="text-sm text-slate-400">3+ anos</p>
+      </div>
+
+      <div class="rounded-2xl bg-slate-800/70 p-6 text-center shadow-glow transition hover:-translate-y-1">
+        <i class="devicon-css3-plain colored text-5xl"></i>
+        <p class="mt-4 font-semibold text-white">CSS</p>
+        <p class="text-sm text-slate-400">3+ anos</p>
+      </div>
+
+      <div class="rounded-2xl bg-slate-800/70 p-6 text-center shadow-glow transition hover:-translate-y-1">
+        <i class="devicon-mysql-plain colored text-5xl"></i>
+        <p class="mt-4 font-semibold text-white">MySQL</p>
+        <p class="text-sm text-slate-400">3+ anos</p>
+      </div>
+
+      <div class="rounded-2xl bg-slate-800/70 p-6 text-center shadow-glow transition hover:-translate-y-1">
+        <i class="devicon-postgresql-plain colored text-5xl"></i>
+        <p class="mt-4 font-semibold text-white">PostgreSQL</p>
+        <p class="text-sm text-slate-400">3+ anos</p>
+      </div>
     </div>
-</section>
+  </section>
 
-    
+  <!-- Download CV -->
+  <div class="flex justify-center px-6 py-4">
+    <a
+      href="arquivos/curriculo_artur.pdf"
+      download
+      class="inline-flex items-center gap-3 rounded-full bg-sky-400 px-6 py-3 font-semibold text-slate-950 shadow-glow transition hover:scale-105 hover:bg-sky-500"
+    >
+      <span><i class="fas fa-file-alt"></i></span>
+      <span>Baixar currículo</span>
+      <span>📄</span>
+    </a>
+  </div>
 
-    <script src="meuPortifólio.js"></script>
+  <!-- Contato -->
+  <section id="contato" class="mx-auto max-w-4xl px-6 py-20 text-center">
+    <h2 class="mb-6 text-3xl font-bold text-sky-400">📬 Contato</h2>
+
+    <p class="text-lg leading-8 text-slate-300">
+      Estou aberto a oportunidades, conexões profissionais e conversas sobre tecnologia, desenvolvimento web e novos projetos.
+    </p>
+
+    <p class="mt-4 text-lg text-slate-300">
+      📧
+      <a
+        href="mailto:arturmineiro2@hotmail.com"
+        class="underline decoration-sky-400 underline-offset-4 hover:text-sky-400"
+      >
+        arturmineiro2@hotmail.com
+      </a>
+    </p>
+
+    <div class="mt-8 flex justify-center gap-6 text-3xl">
+      <a
+        href="https://linkedin.com/in/artur-mineiro-2871b021a"
+        target="_blank"
+        aria-label="LinkedIn"
+        class="text-sky-400 transition hover:-translate-y-1 hover:text-sky-300"
+      >
+        <i class="fab fa-linkedin"></i>
+      </a>
+
+      <a
+        href="https://github.com/ArturMineiro"
+        target="_blank"
+        aria-label="GitHub"
+        class="text-sky-400 transition hover:-translate-y-1 hover:text-sky-300"
+      >
+        <i class="fab fa-github"></i>
+      </a>
+
+      <a
+        href="https://www.instagram.com/artur_mineiro"
+        target="_blank"
+        aria-label="Instagram"
+        class="text-sky-400 transition hover:-translate-y-1 hover:text-sky-300"
+      >
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    // Menu mobile
+    const menuToggleBtn = document.getElementById("menuToggleBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileLinks = document.querySelectorAll(".mobile-link");
+
+    menuToggleBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+
+    // Botão topo
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.remove("hidden");
+      } else {
+        scrollTopBtn.classList.add("hidden");
+      }
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Swipers
+    document.querySelectorAll(".projetoSwiper").forEach((swiperEl) => {
+      new Swiper(swiperEl, {
+        loop: true,
+        spaceBetween: 10,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: swiperEl.querySelector(".swiper-pagination"),
+          clickable: true,
+        },
+        navigation: {
+          nextEl: swiperEl.querySelector(".swiper-button-next"),
+          prevEl: swiperEl.querySelector(".swiper-button-prev"),
+        },
+      });
+    });
+
+    const modal = document.getElementById("galleryModal");
+const modalImages = document.getElementById("modalImages");
+const closeGallery = document.getElementById("closeGallery");
+
+let modalSwiper;
+
+document.querySelectorAll(".project-gallery").forEach((gallery) => {
+
+  gallery.querySelectorAll(".gallery-image").forEach((img, index) => {
+
+    img.addEventListener("click", () => {
+
+      modalImages.innerHTML = "";
+
+      const images = gallery.querySelectorAll(".gallery-image");
+
+      images.forEach((image) => {
+
+        const slide = document.createElement("div");
+        slide.className = "swiper-slide flex justify-center";
+
+        slide.innerHTML = `
+          <img src="${image.src}" class="max-h-[80vh] object-contain">
+        `;
+
+        modalImages.appendChild(slide);
+
+      });
+
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+
+      if (modalSwiper) {
+        modalSwiper.destroy(true, true);
+      }
+
+      modalSwiper = new Swiper(".modalSwiper", {
+        initialSlide: index,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+
+    });
+
+  });
+closeGallery.addEventListener("click", () => {
+  modal.classList.add("hidden");
+  modal.classList.remove("flex");
+});
+
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+  }
+});
+});
+  </script>
 </body>
 </html>
