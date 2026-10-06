@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Monograma A de Artur Mineiro">
+  <rect width="64" height="64" rx="14" fill="#1f2321"/>
+  <!-- A geométrico: legível até em 16 px -->
+  <path d="M13 47 27.6 13h8.8L51 47h-9.2l-2.7-7H24.8l-2.7 7H13Zm14.7-14.6h8.6L32 21.2l-4.3 11.2Z" fill="#e9ecea" fill-rule="evenodd"/>
+  <!-- Duas ondas remetem ao Rio e à identidade do portfólio -->
+  <path d="M7 49.5c6-3 11.5-3 17.5 0s11.5 3 17.5 0 11.5-3 15 0" fill="none" stroke="#7cc4d6" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M7 55c6-3 11.5-3 17.5 0s11.5 3 17.5 0 11.5-3 15 0" fill="none" stroke="#f2c14e" stroke-width="2" stroke-linecap="round"/>
+</svg>

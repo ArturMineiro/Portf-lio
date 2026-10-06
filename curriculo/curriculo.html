@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Currículo — Artur Mineiro Gomes</title>
+  <style>
+    @page { size: A4; margin: 12mm 14mm 11mm; }
+    * { box-sizing: border-box; }
+    html { background: #e6e8e7; }
+    body {
+      width: 182mm;
+      min-height: 274mm;
+      margin: 0 auto;
+      background: #fff;
+      color: #202522;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 9.8pt;
+      line-height: 1.36;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    header { border-bottom: 2.5px solid #0b5c73; padding-bottom: 8px; }
+    h1 { margin: 0; font-size: 24pt; line-height: 1; letter-spacing: -.4px; }
+    .role { margin: 4px 0 7px; color: #0b5c73; font-size: 11.5pt; font-weight: 700; }
+    .contact { display: flex; flex-wrap: wrap; gap: 2px 12px; color: #3e4742; font-size: 8.4pt; }
+    a { color: inherit; text-decoration: none; }
+    section { margin-top: 12px; }
+    h2 {
+      margin: 0 0 6px;
+      color: #0b5c73;
+      font-size: 10pt;
+      line-height: 1;
+      letter-spacing: .75px;
+      text-transform: uppercase;
+    }
+    p { margin: 0; }
+    .summary { max-width: 168mm; }
+    .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 20px; }
+    .skills p { break-inside: avoid; }
+    .skills strong { color: #202522; }
+    .job, .education { break-inside: avoid; margin-top: 9px; }
+    .job:first-of-type, .education:first-of-type { margin-top: 0; }
+    .line { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 10px; }
+    h3 { margin: 0; font-size: 10.4pt; }
+    .company { color: #0b5c73; }
+    time { color: #4c5651; font-size: 8.3pt; font-weight: 700; white-space: nowrap; }
+    ul { margin: 3px 0 0; padding-left: 15px; }
+    li { margin: 2px 0; padding-left: 1px; }
+    .education p { margin-top: 1px; color: #4c5651; }
+    footer { margin-top: 9px; border-top: 1px solid #bdc7c2; padding-top: 5px; color: #59635e; font-size: 7.8pt; }
+    @media print {
+      html, body { background: #fff; }
+      body { width: auto; min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Artur Mineiro Gomes</h1>
+    <p class="role">Desenvolvedor Full Stack</p>
+    <div class="contact">
+      <span>Rio de Janeiro, RJ</span>
+      <a href="tel:+5521974081023">(21) 97408-1023</a>
+      <a href="mailto:arturmineiro2@gmail.com">arturmineiro2@gmail.com</a>
+      <a href="https://www.linkedin.com/in/artur-mineiro/">linkedin.com/in/artur-mineiro</a>
+      <a href="https://github.com/ArturMineiro">github.com/ArturMineiro</a>
+    </div>
+  </header>
+
+  <section aria-labelledby="resumo">
+    <h2 id="resumo">Resumo profissional</h2>
+    <p class="summary">Desenvolvedor Full Stack com mais de 3 anos de experiência em desenvolvimento e manutenção de aplicações web. Atuação em sistemas de produção com Java, Groovy/Grails, Spring Boot, React, TypeScript, Laravel e Angular, incluindo integrações com serviços externos, correção de bugs, evolução de funcionalidades e modelagem de dados relacionais.</p>
+  </section>
+
+  <section aria-labelledby="competencias">
+    <h2 id="competencias">Competências técnicas</h2>
+    <div class="skills">
+      <p><strong>Front-end:</strong> React, TypeScript, JavaScript, Angular, HTML, CSS</p>
+      <p><strong>Back-end:</strong> Java, Spring Boot, Groovy, Grails, PHP, Laravel</p>
+      <p><strong>Dados:</strong> PostgreSQL, MySQL</p>
+      <p><strong>APIs e cloud:</strong> REST APIs, Swagger, Insomnia, AWS</p>
+      <p><strong>Engenharia:</strong> Git, Docker, code review, manutenção de legados</p>
+      <p><strong>Ferramentas:</strong> IntelliJ IDEA, DataGrip, VS Code</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="experiencia">
+    <h2 id="experiencia">Experiência profissional</h2>
+
+    <article class="job">
+      <div class="line">
+        <h3>Desenvolvedor Full Stack · <span class="company">Solution TI</span></h3>
+        <time>set/2025 — atual</time>
+      </div>
+      <ul>
+        <li>Desenvolvimento e manutenção de soluções para processos digitais do DETRAN, com Groovy/Grails e Java no back-end e React/TypeScript no front-end.</li>
+        <li>Integrações com serviços externos para processos de primeiro emplacamento e transferência de veículos, incluindo consumo de APIs e tratamento de respostas.</li>
+        <li>Correção de bugs em produção e evolução de módulos, analisando regras de negócio e impactos entre as camadas da aplicação.</li>
+        <li>Participação em code reviews e uso de Docker, Swagger, IntelliJ IDEA e DataGrip no desenvolvimento, testes e análise das aplicações.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="line">
+        <h3>Desenvolvedor Full Stack · <span class="company">Crase Sigma</span></h3>
+        <time>set/2023 — set/2025</time>
+      </div>
+      <ul>
+        <li>Desenvolvimento e manutenção de sistemas web com Laravel no back-end e Angular no front-end, implementando funcionalidades e corrigindo bugs.</li>
+        <li>Criação de recursos para gestão e locação de imóveis e modelagem, consulta e manutenção de dados em PostgreSQL.</li>
+        <li>Evolução de aplicações legadas com PHP, TypeScript, Python, HTML e CSS, buscando melhorias com baixo impacto sobre o sistema existente.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="line">
+        <h3>Estagiário de Informática · <span class="company">Atlanticont LTDA</span></h3>
+        <time>2022 — 2023</time>
+      </div>
+      <ul>
+        <li>Suporte técnico remoto e presencial, manutenção de hardware e software, instalação de sistemas e diagnóstico de equipamentos e impressoras.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section aria-labelledby="formacao">
+    <h2 id="formacao">Formação</h2>
+    <article class="education">
+      <div class="line">
+        <h3>Análise e Desenvolvimento de Sistemas · <span class="company">Universidade Veiga de Almeida</span></h3>
+        <time>2023 — 2025</time>
+      </div>
+      <p>Graduação tecnológica.</p>
+    </article>
+    <article class="education">
+      <div class="line">
+        <h3>Técnico em Desenvolvimento Web · <span class="company">Colégio Santo Inácio</span></h3>
+        <time>2021 — 2023</time>
+      </div>
+    </article>
+  </section>
+
+  <footer>Portfólio e projetos disponíveis em github.com/ArturMineiro e no LinkedIn.</footer>
+</body>
+</html>

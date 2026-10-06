@@ -1,4 +1,4 @@
-name: Deploy HTML/CSS/JS to Hostinger
+name: Deploy para Hostinger
 
 on:
   push:
@@ -10,23 +10,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Pega o código do repositório
-      - name: Checkout código
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      # 2️⃣ Upload via FTP para Hostinger
-      - name: Upload via FTP para Hostinger
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.0
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Testes
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      # Só o resultado do build (dist/) vai para o servidor
+      - name: Upload via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./ # raiz do repositório
+          local-dir: ./dist/
           server-dir: /public_html/
-
-          # Ignorar arquivos desnecessários
-          exclude: |
-            .git*
-            .github*
-            README.md
-            node_modules*
