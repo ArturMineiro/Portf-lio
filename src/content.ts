@@ -15,7 +15,9 @@ export interface Project {
   title: T;
   summary: T;
   highlights: T[];
-  repo: string;
+  /** Endereço do sistema no ar, quando houver. */
+  site?: string;
+  repo?: string;
   shots: Shot[];
 }
 
@@ -64,34 +66,34 @@ export const experience: TimelineEntry[] = [
     role: { pt: "Desenvolvedor full-stack", en: "Full-stack developer" },
     org: "Solution TI",
     description: {
-      pt: "Desenvolvo e mantenho soluções para processos digitais do DETRAN, com Groovy/Grails e Java no back-end e React/TypeScript no front-end. Implemento integrações com serviços externos para fluxos como primeiro emplacamento e transferência de veículos, corrijo bugs em produção e evoluo módulos considerando regras de negócio e impactos entre camadas. Também participo de code reviews e da manutenção da qualidade do código.",
-      en: "I build and maintain solutions for DETRAN digital services using Groovy/Grails and Java on the back end and React/TypeScript on the front end. I integrate external services for workflows such as first vehicle registration and ownership transfers, fix production issues and evolve modules while accounting for business rules and cross-layer impact. I also take part in code reviews and code-quality maintenance.",
+      pt: "Desenvolvo e sustento o sistema de emplacamento digital do Detran-PE em produção e integro o emplacamento de outros estados, com Groovy/Grails e Java no back-end e React/TypeScript no front-end. Implemento os fluxos de primeiro emplacamento e transferência de veículos usados: validações, geração e assinatura de documentos digitais e comunicação direta com endpoints governamentais, adequando o sistema às regras de cada estado. Analiso logs e corrijo falhas em produção e trabalho em Scrum, com code review.",
+      en: "I build and support the Detran-PE digital vehicle registration system in production and integrate registration for other Brazilian states, using Groovy/Grails and Java on the back end and React/TypeScript on the front end. I implement the first-registration and used-vehicle transfer flows: validations, digital document generation and signing, and direct integration with government endpoints, adapting the system to each state's rules. I analyse logs, fix production issues and work in Scrum with code reviews.",
     },
-    stack: ["Java", "Groovy", "Grails", "React", "TypeScript", "Docker", "Swagger"],
+    stack: ["Java", "Groovy", "Grails", "React", "TypeScript", "Docker", "Jira", "Bitbucket"],
   },
   {
     period: { pt: "set/2023 – set/2025", en: "Sep 2023 – Sep 2025" },
-    role: { pt: "Desenvolvedor full-stack", en: "Full-stack developer" },
+    role: { pt: "Desenvolvedor web júnior (trainee até ago/2024)", en: "Junior web developer (trainee until Aug 2024)" },
     org: "Crase Sigma",
     description: {
-      pt: "Desenvolvi e mantive sistemas web com Laravel no back-end e Angular no front-end, implementando funcionalidades, corrigindo bugs e modelando dados em PostgreSQL. Criei recursos para gestão e locação de imóveis e trabalhei também com PHP, TypeScript, Python, HTML e CSS na evolução do produto e de aplicações legadas.",
-      en: "I built and maintained web systems with Laravel on the back end and Angular on the front end, shipping features, fixing bugs and modelling data in PostgreSQL. I delivered property-management and rental features and also used PHP, TypeScript, Python, HTML and CSS to evolve both the product and legacy applications.",
+      pt: "Desenvolvi e mantive funcionalidades de sistema web com Laravel (PHP) no back-end e Angular no front-end, com modelagem de dados e otimização de consultas em PostgreSQL. Mantive integrações críticas com sistemas legados em COBOL e a troca de arquivos via FTP com parceiros externos, criei recursos de gestão e locação de imóveis e automatizei tarefas repetitivas com scripts em Python.",
+      en: "I built and maintained web features with Laravel (PHP) on the back end and Angular on the front end, with data modelling and query optimization in PostgreSQL. I maintained critical integrations with legacy COBOL systems and FTP file exchange with external partners, delivered property-management and rental features and automated repetitive tasks with Python scripts.",
     },
-    stack: ["Laravel", "Angular", "PHP", "TypeScript", "Python", "PostgreSQL"],
+    stack: ["Laravel", "Angular", "PHP", "PostgreSQL", "Python", "COBOL"],
   },
   {
-    period: { pt: "2022 – 2023", en: "2022 – 2023" },
+    period: { pt: "jul/2022 – set/2023", en: "Jul 2022 – Sep 2023" },
     role: { pt: "Estagiário de informática", en: "IT intern" },
-    org: "Atlanticont LTDA",
+    org: "Atlanticont",
     description: {
-      pt: "Suporte técnico remoto e presencial, manutenção de hardware e software, instalação de sistemas e resolução de problemas em equipamentos e impressoras. A experiência fortaleceu minha base em suporte ao usuário e diagnóstico técnico.",
-      en: "Remote and on-site technical support, hardware and software maintenance, system installs and troubleshooting for devices and printers. It strengthened my foundation in user support and technical diagnosis.",
+      pt: "Suporte técnico presencial e remoto, instalação e manutenção de impressoras multifuncionais em clientes e configuração de dispositivos em rede LAN/Wi-Fi. A experiência fortaleceu minha base em suporte ao usuário e diagnóstico técnico.",
+      en: "On-site and remote technical support, installing and maintaining multifunction printers at client sites and configuring LAN/Wi-Fi network devices. It strengthened my foundation in user support and technical diagnosis.",
     },
   },
   {
-    period: { pt: "2019 – 2022", en: "2019 – 2022" },
-    role: { pt: "Jovem aprendiz", en: "Apprentice" },
-    org: "Bené Herzl",
+    period: { pt: "2019 – 2021", en: "2019 – 2021" },
+    role: { pt: "Auxiliar administrativo (aprendiz)", en: "Administrative assistant (apprentice)" },
+    org: "Lar de Ipanema Bené Herzl",
     description: {
       pt: "Rotinas administrativas que desenvolveram organização, disciplina, responsabilidade e comunicação profissional.",
       en: "Administrative routines that built organization, discipline, responsibility and professional communication.",
@@ -121,6 +123,59 @@ export const education: TimelineEntry[] = [
 ];
 
 export const projects: Project[] = [
+  {
+    id: "rota-financeira",
+    title: { pt: "Rota Financeira", en: "Rota Financeira" },
+    summary: {
+      pt: "App de gestão financeira para motoristas e entregadores que mostra quanto realmente sobra depois de combustível, manutenção e custos por km. Feito em equipe de três e no ar desde dez/2025; fiquei à frente da infraestrutura, do deploy e da autenticação.",
+      en: "Finance app for drivers and couriers that shows what is really left after fuel, maintenance and per-km costs. Built by a team of three and live since Dec 2025; I led infrastructure, deployment and authentication.",
+    },
+    highlights: [
+      { pt: "VPS com Docker, HTTPS automático com Caddy e CI/CD que testa e publica a cada push", en: "Docker on a VPS, automatic HTTPS with Caddy and CI/CD that tests and ships on every push" },
+      { pt: "Login com Google, confirmação de e-mail e PWA com notificações push", en: "Google sign-in, email confirmation and a PWA with push notifications" },
+      { pt: "Painel admin com financeiro, cupons e jornada de cada usuário", en: "Admin panel with revenue, coupons and each user's journey" },
+      { pt: "React Native + Expo, Node.js, Sequelize e PostgreSQL", en: "React Native + Expo, Node.js, Sequelize and PostgreSQL" },
+    ],
+    site: "https://rotafinanceira.app",
+    shots: [shot("rotafinanceira1.jpg", 1200, 630, "Rota Financeira: finanças inteligentes para quem dirige", "Rota Financeira: smart finances for drivers")],
+  },
+  {
+    id: "afinances",
+    title: { pt: "aFinances", en: "aFinances" },
+    summary: {
+      pt: "Controle financeiro multiusuário com contas, cartões, parcelas, recorrências e investimentos. Construído com agentes de IA (Claude Code) no fluxo, com testes de ponta a ponta e deploy automático só quando tudo passa.",
+      en: "Multi-user personal finance app with accounts, cards, installments, recurring entries and investments. Built with AI agents (Claude Code) in the loop, end-to-end tests and automatic deploys only when everything passes.",
+    },
+    highlights: [
+      { pt: "Visão do mês com saldo atual, previsto e contas a vencer", en: "Monthly view with current and projected balance and upcoming bills" },
+      { pt: "Relatórios por categoria, fluxo de caixa e comparativo", en: "Reports by category, cash flow and comparisons" },
+      { pt: "React 19, Node/Express, Prisma, PostgreSQL, Docker e GitHub Actions", en: "React 19, Node/Express, Prisma, PostgreSQL, Docker and GitHub Actions" },
+    ],
+    site: "https://afinances.forgedevapps.com",
+    shots: [
+      shot("afinances1.jpg", 1200, 769, "Visão geral do mês com saldos e vencimentos", "Monthly overview with balances and due items"),
+      shot("afinances2.jpg", 1200, 769, "Lista de lançamentos", "Transactions list"),
+      shot("afinances3.jpg", 1200, 769, "Relatório de despesas por categoria", "Expenses by category report"),
+      shot("afinances4.jpg", 1200, 769, "Calendário de pagamentos e recebimentos", "Payments and receipts calendar"),
+    ],
+  },
+  {
+    id: "bateu-a-fome",
+    title: { pt: "Bateu a Fome", en: "Bateu a Fome" },
+    summary: {
+      pt: "Cardápio online multiloja para pequenos negócios de comida: o cliente monta o pedido e ele chega pronto no WhatsApp da loja, sem aplicativo para baixar e sem comissão por venda. Em uso por lojas reais.",
+      en: "Multi-store online menu for small food businesses: customers build their order and it arrives ready in the store's WhatsApp, with no app to install and no per-order fee. Used by real stores.",
+    },
+    highlights: [
+      { pt: "Loja própria com link, categorias, busca e horário de funcionamento", en: "Each store gets its own link, categories, search and opening hours" },
+      { pt: "Pedido formatado direto no WhatsApp", en: "Formatted order sent straight to WhatsApp" },
+    ],
+    site: "https://bateuafomeapp.forgedevapps.com",
+    shots: [
+      shot("bateuafome1.jpg", 1200, 600, "Página inicial do Bateu a Fome", "Bateu a Fome home page"),
+      shot("bateuafome2.jpg", 1200, 600, "Cardápio de uma loja real", "A real store's menu"),
+    ],
+  },
   {
     id: "cobranca",
     title: { pt: "Sistema de cobrança e cartas", en: "Billing and letter system" },
@@ -220,11 +275,15 @@ export const skills: SkillGroup[] = [
 export const tools: ToolGroup[] = [
   {
     title: { pt: "Ecossistema e linguagens", en: "Ecosystem and languages" },
-    items: ["Groovy", "Grails", "JavaScript", "Python", "HTML", "CSS"],
+    items: ["Groovy", "Grails", "Node.js", "Express", "React Native", "Expo", "JavaScript", "Python", "Flask", "HTML", "CSS"],
+  },
+  {
+    title: { pt: "IA e produção", en: "AI and production" },
+    items: ["Claude Code", "Docker", "GitHub Actions (CI/CD)", "Linux/VPS", "Nginx", "Caddy", "Vitest", "Playwright"],
   },
   {
     title: { pt: "Ferramentas e integrações", en: "Tools and integrations" },
-    items: ["Git", "Docker", "Swagger", "Insomnia", "REST APIs", "AWS", "IntelliJ IDEA", "DataGrip"],
+    items: ["Git", "Jira", "Bitbucket", "Scrum", "Swagger", "Insomnia", "REST APIs", "AWS", "Prisma", "IntelliJ IDEA", "DataGrip"],
   },
 ];
 
@@ -241,7 +300,7 @@ export const ui = {
     langLabel: "Idioma",
     role: "Desenvolvedor web full-stack",
     intro:
-      "Desenvolvedor full-stack com 3+ anos de experiência. Construo e evoluo sistemas de produção com Java, Groovy/Grails e React, integro serviços externos e transformo regras de negócio complexas em aplicações confiáveis.",
+      "Desenvolvedor full-stack com 3+ anos de experiência. Hoje atuo no emplacamento digital do Detran-PE com Java, Groovy/Grails e React, e coloco no ar meus próprios produtos com Docker e CI/CD. Uso agentes de IA (Claude Code) no dia a dia, sempre com testes automatizados e revisão humana.",
     seeProjects: "Ver projetos",
     downloadCv: "Baixar currículo (PDF)",
     photoAlt: "Artur Mineiro sorrindo, de camiseta azul, em frente a uma parede escura com plantas",
@@ -250,8 +309,9 @@ export const ui = {
     education: "Formação",
     current: "Atual",
     projectsTitle: "Projetos",
-    projectsIntro: "Sistemas que automatizam rotinas administrativas e financeiras. Clique numa imagem para ampliar.",
+    projectsIntro: "Produtos no ar e sistemas que automatizam rotinas administrativas e financeiras. Clique numa imagem para ampliar.",
     viewCode: "Ver código no GitHub",
+    viewSite: "Ver no ar",
     openShot: (n: number, total: number) => `Ampliar imagem ${n} de ${total}`,
     showShot: (n: number) => `Mostrar imagem ${n}`,
     gallery: "Galeria",
@@ -276,7 +336,7 @@ export const ui = {
     langLabel: "Language",
     role: "Full-stack web developer",
     intro:
-      "Full-stack developer with 3+ years of experience. I build and evolve production systems with Java, Groovy/Grails and React, integrate external services and turn complex business rules into reliable applications.",
+      "Full-stack developer with 3+ years of experience. I currently work on the Detran-PE digital vehicle registration system with Java, Groovy/Grails and React, and I ship my own products with Docker and CI/CD. I use AI agents (Claude Code) every day, always backed by automated tests and human review.",
     seeProjects: "See projects",
     downloadCv: "Download résumé (PDF)",
     photoAlt: "Artur Mineiro smiling in a blue T-shirt, in front of a dark wall with plants",
@@ -285,8 +345,9 @@ export const ui = {
     education: "Education",
     current: "Current",
     projectsTitle: "Projects",
-    projectsIntro: "Systems that automate administrative and financial routines. Click an image to enlarge it.",
+    projectsIntro: "Live products and systems that automate administrative and financial routines. Click an image to enlarge it.",
     viewCode: "View code on GitHub",
+    viewSite: "See it live",
     openShot: (n: number, total: number) => `Enlarge image ${n} of ${total}`,
     showShot: (n: number) => `Show image ${n}`,
     gallery: "Gallery",

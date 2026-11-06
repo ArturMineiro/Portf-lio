@@ -12,6 +12,9 @@ const renderApp = (initial: "pt" | "en" = "pt") =>
     </LangProvider>,
   );
 
+/** Primeiro projeto com galeria de 3+ imagens (há projetos com uma imagem só). */
+const galleryIndex = () => projects.findIndex((p) => p.shots.length >= 3);
+
 describe("Portfólio", () => {
   it("mostra nome, seções e todos os projetos", () => {
     renderApp();
@@ -23,6 +26,16 @@ describe("Portfólio", () => {
     expect(screen.getByText(/Solution TI/)).toBeInTheDocument();
     expect(screen.getAllByText("Spring Boot").length).toBeGreaterThan(0);
     expect(screen.getByText("Ferramentas e integrações")).toBeInTheDocument();
+  });
+
+  it("projetos no ar têm link para o site e todo projeto tem algum link", () => {
+    renderApp();
+    const links = screen.getAllByRole("link", { name: "Ver no ar" }).map((a) => a.getAttribute("href"));
+    expect(links).toEqual(projects.filter((p) => p.site).map((p) => p.site));
+    for (const p of projects) {
+      expect(p.site || p.repo).toBeTruthy();
+      expect(p.shots.length).toBeGreaterThan(0);
+    }
   });
 
   it("não tem imagens de projeto repetidas", () => {
@@ -47,8 +60,9 @@ describe("Portfólio", () => {
   it("abre a galeria, navega com as setas e fecha", async () => {
     const user = userEvent.setup();
     renderApp("pt");
-    const [first] = projects;
-    const article = screen.getAllByRole("article")[0];
+    const idx = galleryIndex();
+    const first = projects[idx];
+    const article = screen.getAllByRole("article")[idx];
 
     await user.click(within(article).getByRole("button", { name: `Ampliar imagem 1 de ${first.shots.length}` }));
     const dialog = screen.getByRole("dialog");
@@ -69,7 +83,7 @@ describe("Portfólio", () => {
   it("miniatura troca a imagem principal", async () => {
     const user = userEvent.setup();
     renderApp("pt");
-    const article = screen.getAllByRole("article")[0];
+    const article = screen.getAllByRole("article")[galleryIndex()];
     await user.click(within(article).getByRole("button", { name: "Mostrar imagem 3" }));
     expect(within(article).getByRole("button", { name: /Ampliar imagem 3 de/ })).toBeInTheDocument();
   });

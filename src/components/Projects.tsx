@@ -93,9 +93,18 @@ function ProjectRow({ project, reverse }: { project: Project; reverse: boolean }
             </li>
           ))}
         </ul>
-        <a href={project.repo} target="_blank" rel="noopener noreferrer" className="link mt-8 inline-block font-semibold text-mar">
-          {t.viewCode}
-        </a>
+        <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
+          {project.site && (
+            <a href={project.site} target="_blank" rel="noopener noreferrer" className="link font-semibold text-mar">
+              {t.viewSite}
+            </a>
+          )}
+          {project.repo && (
+            <a href={project.repo} target="_blank" rel="noopener noreferrer" className="link font-semibold text-mar">
+              {t.viewCode}
+            </a>
+          )}
+        </div>
       </div>
 
       <Lightbox title={title} shots={shots} index={lightbox} onIndexChange={setLightbox} onClose={() => setLightbox(null)} />
