@@ -243,6 +243,38 @@ export const projects: Project[] = [
   },
 ];
 
+/** Como trabalho com agentes de IA, em etapas. */
+export const aiWorkflow: { title: T; text: T }[] = [
+  {
+    title: { pt: "Eu defino o escopo", en: "I set the scope" },
+    text: {
+      pt: "Descrevo a tarefa, as regras de negócio e o critério de pronto. O agente lê o código do projeto e propõe um plano antes de mexer em qualquer arquivo.",
+      en: "I describe the task, the business rules and what done means. The agent reads the codebase and proposes a plan before touching any file.",
+    },
+  },
+  {
+    title: { pt: "O agente implementa e testa", en: "The agent builds and tests" },
+    text: {
+      pt: "O Claude Code implementa em uma branch isolada, roda testes e checagem de tipos e só então propõe o commit.",
+      en: "Claude Code implements on an isolated branch, runs tests and type checks and only then proposes the commit.",
+    },
+  },
+  {
+    title: { pt: "Eu reviso cada mudança", en: "I review every change" },
+    text: {
+      pt: "Leio cada diff, peço correções e só aceito o que entendo. A responsabilidade pelo código continua sendo minha.",
+      en: "I read every diff, ask for fixes and only accept what I understand. I stay accountable for the code.",
+    },
+  },
+  {
+    title: { pt: "A produção fica protegida", en: "Production stays safe" },
+    text: {
+      pt: "O CI/CD só publica quando build, tipos e testes passam, com migrações de banco e backups automáticos.",
+      en: "CI/CD only ships when build, types and tests pass, with automatic database migrations and backups.",
+    },
+  },
+];
+
 export const skills: SkillGroup[] = [
   {
     title: { pt: "Front-end", en: "Front end" },
@@ -294,7 +326,12 @@ export const ui = {
     metaDescription:
       "Portfólio de Artur Mineiro, desenvolvedor full-stack com experiência em Java, Spring Boot, Groovy/Grails, React, TypeScript, Laravel e Angular.",
     skip: "Pular para o conteúdo",
-    nav: { path: "Trajetória", projects: "Projetos", skills: "Tecnologias", contact: "Contato" },
+    nav: { path: "Trajetória", ai: "IA", projects: "Projetos", skills: "Tecnologias", contact: "Contato" },
+    aiTitle: "IA no meu fluxo",
+    aiIntro:
+      "Trabalho com agentes de IA no dia a dia para entregar mais rápido sem abrir mão de qualidade. O agente escreve e testa; eu decido, reviso e respondo pelo que vai para produção.",
+    aiParallel:
+      "Com o Orca, rodo vários agentes ao mesmo tempo, cada um na sua worktree, em tarefas diferentes do mesmo projeto. Uso esse fluxo em 7 projetos meus, entre eles o Rota Financeira, o aFinances e este portfólio.",
     menuOpen: "Abrir menu",
     menuClose: "Fechar menu",
     langLabel: "Idioma",
@@ -330,7 +367,12 @@ export const ui = {
     metaDescription:
       "Portfolio of Artur Mineiro, a full-stack developer experienced with Java, Spring Boot, Groovy/Grails, React, TypeScript, Laravel and Angular.",
     skip: "Skip to content",
-    nav: { path: "Background", projects: "Projects", skills: "Skills", contact: "Contact" },
+    nav: { path: "Background", ai: "AI", projects: "Projects", skills: "Skills", contact: "Contact" },
+    aiTitle: "AI in my workflow",
+    aiIntro:
+      "I work with AI agents every day to ship faster without giving up quality. The agent writes and tests; I decide, review and own what goes to production.",
+    aiParallel:
+      "With Orca I run several agents at once, each in its own worktree, on different tasks in the same project. I use this workflow in 7 of my projects, including Rota Financeira, aFinances and this portfolio.",
     menuOpen: "Open menu",
     menuClose: "Close menu",
     langLabel: "Language",

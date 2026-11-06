@@ -19,7 +19,7 @@ describe("Portfólio", () => {
   it("mostra nome, seções e todos os projetos", () => {
     renderApp();
     expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("ArturMineiro");
-    for (const name of ["Trajetória", "Projetos", "Tecnologias", "Vamos conversar"]) {
+    for (const name of ["Trajetória", "IA no meu fluxo", "Projetos", "Tecnologias", "Vamos conversar"]) {
       expect(screen.getByRole("heading", { level: 2, name })).toBeInTheDocument();
     }
     expect(screen.getAllByRole("article")).toHaveLength(projects.length);

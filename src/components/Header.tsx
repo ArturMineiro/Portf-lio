@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { useLang } from "../i18n";
 import type { Lang } from "../content";
 
-const sections = ["trajetoria", "projetos", "tecnologias", "contato"] as const;
+const sections = ["trajetoria", "ia", "projetos", "tecnologias", "contato"] as const;
 
 export function Header() {
   const { t, lang, setLang } = useLang();
   const [open, setOpen] = useState(false);
 
-  const labels = [t.nav.path, t.nav.projects, t.nav.skills, t.nav.contact];
+  const labels = [t.nav.path, t.nav.ai, t.nav.projects, t.nav.skills, t.nav.contact];
 
   // Fecha o menu mobile com Esc
   useEffect(() => {

@@ -1,3 +1,4 @@
+import { AiWorkflow } from "./components/AiWorkflow";
 import { Contact } from "./components/Contact";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
@@ -12,6 +13,7 @@ export function App() {
       <main id="conteudo" tabIndex={-1} className="outline-none">
         <Hero />
         <Timeline />
+        <AiWorkflow />
         <Projects />
         <Skills />
       </main>
